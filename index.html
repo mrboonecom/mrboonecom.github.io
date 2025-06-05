@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to mrboone.com</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+    <title>Mr Boone - Homepage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my test homepage for mrboone.com!</p>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="videos/skateboard.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+    </div>
+    <header>
+        <div class="logo">
+            <h1>Mr Boone</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="about.html">Know More About Me</a></li>
+                <li><a href="https://mrboone.com" target="_blank">Visit mrboone.com</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to My World</h2>
+            <p>Skateboarder | Creator | Adventurer</p>
+            <a href="about.html" class="cta-button">Explore More</a>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
