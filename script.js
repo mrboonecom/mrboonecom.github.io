@@ -131,5 +131,5 @@ function submitQuiz() {
 function resetQuiz() {
     currentQuestion = 0;
     answers = {};
-    loadQuestion(); // Reload the quiz interface
+    loadQuestion();
 }
