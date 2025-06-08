@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Retain Poppins font */
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -26,7 +26,7 @@ header {
     opacity: 0;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
-    color: #000; /* Black header text */
+    color: #000;
 }
 
 .animated-text h1 {
@@ -68,21 +68,6 @@ header {
     margin-top: 1rem;
 }
 
-@keyframes slideIn {
-    from { transform: translateX(-50px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 .curriculum, .curriculum-content {
     max-width: 1200px;
     margin: 2rem auto;
@@ -93,7 +78,7 @@ header {
 .curriculum h2, .curriculum-content h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #000;
+    color: #333;
 }
 
 .curriculum-list {
@@ -108,7 +93,7 @@ header {
     padding: 1.5rem;
     border-radius: 10px;
     text-decoration: none;
-    color: #000;
+    color: #333;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s;
 }
@@ -120,7 +105,7 @@ header {
 .curriculum-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #007bff; /* Blue headings */
+    color: #007bff;
 }
 
 .game, .quiz-container {
@@ -133,7 +118,7 @@ header {
 .game h2, .quiz-container h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #000;
+    color: #333;
 }
 
 .game-container, .quiz-question {
@@ -153,7 +138,7 @@ header {
 
 .game-container button, .quiz-container button {
     padding: 0.5rem 1rem;
-    background: #007bff; /* Blue button */
+    background: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -163,7 +148,7 @@ header {
 }
 
 .game-container button:hover, .quiz-container button:hover {
-    background: #0056b3; /* Darker blue on hover */
+    background: #0056b3;
 }
 
 .quiz-question label {
@@ -194,8 +179,8 @@ header {
 
 .signup-btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: #007bff; /* Blue button */
+    padding: 0.8rem;
+    background: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -204,13 +189,13 @@ header {
 }
 
 .signup-btn:hover {
-    background: #0056b3; /* Darker blue */
+    background: #0056b3;
 }
 
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: #007bff; /* Blue button */
+    background: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -220,7 +205,7 @@ header {
 }
 
 .btn:hover {
-    background: #0056b3; /* Darker blue */
+    background: #0056b3;
 }
 
 footer {
@@ -236,7 +221,7 @@ footer {
 }
 
 .social-links a {
-    color: #007bff; /* Blue links */
+    color: #007bff;
     text-decoration: none;
     margin: 0 1rem;
     font-size: 1.1rem;
@@ -244,11 +229,11 @@ footer {
 
 .social-links i {
     margin-right: 0.5rem;
-    color: #007bff; /* Blue icons */
+    color: #007bff;
 }
 
 footer a {
-    color: #007bff; /* Blue links */
+    color: #007bff;
     text-decoration: none;
 }
 
