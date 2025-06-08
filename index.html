@@ -6,24 +6,43 @@
     <title>Mr. Boone's Math Tutoring</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Mr. Boone's Math Tutoring</h1>
-        <nav>
-            <a href="https://mrboone.com" target="_blank">Main Site</a>
-            <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>
-        </nav>
+        <div class="animated-text">
+            <h1 class="slide-in">IS YOUR CHILD STRUGGLING WITH MATH?</h1>
+            <h2 class="fade-in">I CAN HELP!</h2>
+            <p class="slide-up">Mr. Boone, Math Tutor for IGCSE, IB, SAT, and Thailand’s International Schools.</p>
+            <p class="fade-in">Customized Zoom lessons in Thai/English</p>
+            <p class="slide-in">Affordable: 600 THB/hr</p>
+            <p class="fade-in">Free practice PDFs</p>
+        </div>
+        <p class="construction">🚧 Site under construction! More content coming soon.</p>
     </header>
 
-    <section class="hero">
-        <h2>Welcome to Mr. Boone's Math Tutoring!</h2>
-        <p>🚧 This site is under construction! Check back soon for free math resources and more fun games. For now, try our Number Guess game below and follow me on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a> for updates!</p>
+    <section class="curriculum">
+        <h2>Choose Your Curriculum</h2>
+        <p>Preparing for a specific exam? Select below to learn more!</p>
+        <div class="curriculum-list">
+            <a href="igcse.html" class="curriculum-card">
+                <h3>IGCSE</h3>
+                <p>Master math for IGCSE exams.</p>
+            </a>
+            <a href="ib.html" class="curriculum-card">
+                <h3>IB</h3>
+                <p>Excel in IB math courses.</p>
+            </a>
+            <a href="sat.html" class="curriculum-card">
+                <h3>SAT</h3>
+                <p>Boost your SAT math score.</p>
+            </a>
+        </div>
     </section>
 
     <section class="game">
         <h2>Play the Number Guess Game!</h2>
-        <p>Guess a number between 1 and 100. Can you get it right?</p>
+        <p>Test your skills with this fun math game!</p>
         <div class="game-container">
             <p id="game-message">Guess a number between 1 and 100!</p>
             <input type="number" id="guess-input" min="1" max="100">
@@ -33,7 +52,11 @@
     </section>
 
     <footer>
-        <p>© 2025 Mr. Boone's Math Tutoring. Follow me on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>.</p>
+        <p>© 2025 Mr. Boone's Math Tutoring</p>
+        <div class="social-links">
+            <a href="https://instagram.com/_mrboone" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://linkedin.com/in/supanut-suntikoon-01870926b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
         <p>Visit <a href="https://mrboone.com" target="_blank">mrboone.com</a> for more!</p>
     </footer>
 
