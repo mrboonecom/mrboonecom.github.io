@@ -14,16 +14,78 @@
         <a href="index.html" class="btn">Back to Home</a>
     </header>
     <section class="curriculum-content">
-        <h2>Boost Your SAT Math Score with Mr. Boone</h2>
-        <p>Personalized Zoom lessons in Thai or English to tackle SAT math topics like algebra and geometry. Affordable at 600 THB/hr. Contact me today!</p>
+        <h2>Try These Top 10 SAT Math Questions!</h2>
+        <p>Test your math skills with this free assessment! Want to be confident in SAT math? Study with Mr. Boone!</p>
+        <div class="quiz-container" id="quiz-container">
+            <div id="quiz-question" class="quiz-question"></div>
+            <div class="quiz-status" id="quiz-status"></div>
+            <button id="prev-question" onclick="prevQuestion()">Previous</button>
+            <button id="next-question" onclick="nextQuestion()">Next</button>
+        </div>
     </section>
     <footer>
-        <p>© 2025 Mr. Boone's Math Tutoring.</p>
+        <p>© 2025 Mr. Boone's Math Tutoring</p>
         <div class="social-links">
-            <a href="https://www.instagram.com/_mrboone" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://instagram.com/_mrboone" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             <a href="https://linkedin.com/in/mrboone" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
         <p><a href="https://mrboone.com" target="_blank">mrboone.com</a></p>
     </footer>
+    <script src="script.js"></script>
+    <script>
+        questions = [
+            {
+                question: "If 2x + 3 = 11, what is x?",
+                options: ["3", "4", "5", "6"],
+                correct: 0
+            },
+            {
+                question: "What is the slope of the line passing through (2, 3) and (4, 7)?",
+                options: ["1", "2", "3", "4"],
+                correct: 1
+            },
+            {
+                question: "Solve: x² - 5x + 6 = 0",
+                options: ["x = 2, 3", "x = 1, 6", "x = 2, 4", "x = 3, 5"],
+                correct: 0
+            },
+            {
+                question: "What is 20% of 150?",
+                options: ["20", "25", "30", "35"],
+                correct: 2
+            },
+            {
+                question: "If f(x) = 2x + 1, what is f(3)?",
+                options: ["5", "6", "7", "8"],
+                correct: 2
+            },
+            {
+                question: "What is the area of a circle with diameter 10 cm? (Use π ≈ 3.14)",
+                options: ["31.4 cm²", "78.5 cm²", "100 cm²", "314 cm²"],
+                correct: 1
+            },
+            {
+                question: "Solve for y: 2y - 4 = 3y + 1",
+                options: ["y = -5", "y = -3", "y = 3", "y = 5"],
+                correct: 0
+            },
+            {
+                question: "What is the median of 2, 4, 6, 8, 10?",
+                options: ["4", "6", "8", "10"],
+                correct: 1
+            },
+            {
+                question: "If a triangle has angles 30° and 60°, what is the third angle?",
+                options: ["90°", "60°", "120°", "30°"],
+                correct: 0
+            },
+            {
+                question: "What is the value of | -7 | + 3?",
+                options: ["4", "7", "10", "12"],
+                correct: 2
+            }
+        ];
+        loadQuestion();
+    </script>
 </body>
 </html>
