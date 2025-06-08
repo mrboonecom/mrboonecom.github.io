@@ -40,22 +40,27 @@ function resetGame() {
 // Quiz Logic
 let currentQuestion = 0;
 let answers = {};
-let questions = []; // Will be defined in curriculum pages
+let questions = []; // Defined in curriculum pages
 
 function loadQuestion() {
-    const quizContainer = document.getElementById('quiz-question');
+    const quizContainer = document.getElementById('quiz-container');
     if (!quizContainer || !questions.length) return;
 
     const question = questions[currentQuestion];
     const isAnswered = answers[currentQuestion] !== undefined;
     quizContainer.innerHTML = `
-        <h3>Question ${currentQuestion + 1}: ${question.question}</h3>
-        ${question.options.map((option, index) => `
-            <label>
-                <input type="radio" name="answer" value="${index}" ${answers[currentQuestion] === index ? 'checked' : ''}>
-                ${option}
-            </label>
-        `).join('')}
+        <div id="quiz-question" class="quiz-question">
+            <h3>Question ${currentQuestion + 1}: ${question.question}</h3>
+            ${question.options.map((option, index) => `
+                <label>
+                    <input type="radio" name="answer" value="${index}" ${answers[currentQuestion] === index ? 'checked' : ''}>
+                    ${option}
+                </label>
+            `).join('')}
+        </div>
+        <div class="quiz-status" id="quiz-status"></div>
+        <button id="prev-question" onclick="prevQuestion()">Previous</button>
+        <button id="next-question" onclick="nextQuestion()">Next</button>
     `;
 
     const prevButton = document.getElementById('prev-question');
@@ -102,12 +107,22 @@ function submitQuiz() {
         }
     });
 
+    let feedback = '';
+    if (score === 10) {
+        feedback = 'Congratulations! Want to be more confident? Study with Mr. Boone! Hit the sign-up button on my <a href="https://instagram.com/_mrboone" target="_blank">Instagram profile</a>.';
+    } else if (score >= 8) {
+        feedback = 'Great job! You’re almost there! Boost your skills with Mr. Boone’s lessons. Sign up on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>!';
+    } else if (score >= 5) {
+        feedback = 'Good effort! Let’s improve that score together. Join my lessons via <a href="https://instagram.com/_mrboone" target="_blank">Instagram sign-up</a>!';
+    } else {
+        feedback = 'Don’t worry, practice makes perfect! Start your math journey with Mr. Boone. Sign up on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>!';
+    }
+
     const quizContainer = document.getElementById('quiz-container');
     quizContainer.innerHTML = `
         <div class="quiz-result">
-            <h3>Congratulations, You Scored ${score} out of ${questions.length}!</h3>
-            <p>${score >= 8 ? 'Great job! You’re ready to excel!' : score >= 5 ? 'Good effort! Let’s boost that score together!' : 'Don’t worry, practice makes perfect!'}</p>
-            <p>Want to be confident in math? <a href="https://mrboone.com" target="_blank">Study with Mr. Boone!</a></p>
+            <h3>You Scored ${score} out of ${questions.length}!</h3>
+            <p>${feedback}</p>
             <button onclick="resetQuiz()">Try Again</button>
         </div>
     `;
@@ -116,5 +131,5 @@ function submitQuiz() {
 function resetQuiz() {
     currentQuestion = 0;
     answers = {};
-    loadQuestion();
+    loadQuestion(); // Reload the quiz interface
 }
