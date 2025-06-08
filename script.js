@@ -109,13 +109,13 @@ function submitQuiz() {
 
     let feedback = '';
     if (score === 10) {
-        feedback = 'Congratulations! Want to be more confident? Study with Mr. Boone! Hit the sign-up button on my <a href="https://instagram.com/_mrboone" target="_blank">Instagram profile</a>.';
+        feedback = 'Congratulations! Want to be more confident? Study with Mr.Boone! Hit the sign-up button on my <a href="https://instagram.com/_mrboone" target="_blank">Instagram profile</a>.';
     } else if (score >= 8) {
-        feedback = 'Great job! You’re almost there! Boost your skills with Mr. Boone’s lessons. Sign up on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>!';
+        feedback = 'Great job! You’re almost there! Boost your skills with Mr.Boone’s lessons. Sign up on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>!';
     } else if (score >= 5) {
         feedback = 'Good effort! Let’s improve that score together. Join my lessons via <a href="https://instagram.com/_mrboone" target="_blank">Instagram sign-up</a>!';
     } else {
-        feedback = 'Don’t worry, practice makes perfect! Start your math journey with Mr. Boone. Sign up on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>!';
+        feedback = 'Don’t worry, practice makes perfect! Start your math journey with Mr.Boone. Sign up on <a href="https://instagram.com/_mrboone" target="_blank">Instagram</a>!';
     }
 
     const quizContainer = document.getElementById('quiz-container');
