@@ -23,6 +23,16 @@
             <button id="next-question" onclick="nextQuestion()">Next</button>
         </div>
     </section>
+    <section class="gif-section">
+        <h2>Learn with Mr.Boone!</h2>
+        <p>Watch Mr.Boone solve an IB math question!</p>
+        <div class="gif-container" onclick="openModal()">
+            <img src="assets/videos/IB_GIF.gif" alt="Mr.Boone solving IB question" class="gif-image">
+            <div class="play-overlay">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+    </section>
     <section class="signup">
         <p>Hit the sign-up button on my Instagram profile for a free 30-minute trial!</p>
         <a href="https://instagram.com/_mrboone" target="_blank" class="btn signup-btn">Sign Up for 30-Minute Trial Session</a>
@@ -35,6 +45,13 @@
         </div>
         <p><a href="https://mrboone.com" target="_blank">mrboone.com</a></p>
     </footer>
+
+    <!-- Modal for enlarged GIF -->
+    <div id="gif-modal" class="modal">
+        <span class="close-modal" onclick="closeModal()">×</span>
+        <img src="assets/videos/IB_GIF.gif" alt="Mr.Boone solving IB question" class="modal-gif">
+    </div>
+
     <script src="script.js"></script>
     <script>
         questions = [
@@ -70,26 +87,4 @@
             },
             {
                 question: "Solve the system: x + y = 5, x - y = 1",
-                options: ["(2, 3)", "(4, 1)", "(1, 4)", "(3, 2)"],
-                correct: 3
-            },
-            {
-                question: "What is the probability of getting exactly 2 heads in 3 coin tosses?",
-                options: ["1/4", "1/2", "3/8", "1/8"],
-                correct: 2
-            },
-            {
-                question: "Find the vertex of y = x² - 4x + 3",
-                options: ["(-2, -1)", "(-2, 1)", "(2, 1)", "(2, -1)"],
-                correct: 3
-            },
-            {
-                question: "What is the period of y = sin(2x)?",
-                options: ["4π", "π/2", "2π", "π"],
-                correct: 3
-            }
-        ];
-        loadQuestion();
-    </script>
-</body>
-</html>
+                options: ["(2, 3)", "(4, 1)", "(1, 4
