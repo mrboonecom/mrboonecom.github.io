@@ -16,17 +16,12 @@
     <section class="curriculum-content">
         <h2>Try These Top 10 IB Math Questions!</h2>
         <p>Test your math skills with this free assessment! Want to be confident in IB math? Study with Mr.Boone!</p>
-        <div class="quiz-container" id="quiz-container">
-            <div id="quiz-question" class="quiz-question"></div>
-            <div class="quiz-status" id="quiz-status"></div>
-            <button id="prev-question" onclick="prevQuestion()">Previous</button>
-            <button id="next-question" onclick="nextQuestion()">Next</button>
-        </div>
+        <div class="quiz-container" id="quiz-container"></div>
     </section>
     <section class="gif-section">
         <h2>Learn with Mr.Boone!</h2>
         <p>Watch Mr.Boone solve an IB math question!</p>
-        <div class="gif-container" onclick="openModal()">
+        <div class="gif-container" onclick="openModal('ib-gif-modal')">
             <img src="assets/videos/IB_GIF.gif" alt="Mr.Boone solving IB question" class="gif-image">
             <div class="play-overlay">
                 <i class="fas fa-play"></i>
@@ -47,8 +42,8 @@
     </footer>
 
     <!-- Modal for enlarged GIF -->
-    <div id="gif-modal" class="modal">
-        <span class="close-modal" onclick="closeModal()">×</span>
+    <div id="ib-gif-modal" class="modal">
+        <span class="close-modal" onclick="closeModal('ib-gif-modal')">×</span>
         <img src="assets/videos/IB_GIF.gif" alt="Mr.Boone solving IB question" class="modal-gif">
     </div>
 
@@ -87,4 +82,26 @@
             },
             {
                 question: "Solve the system: x + y = 5, x - y = 1",
-                options: ["(2, 3)", "(4, 1)", "(1, 4
+                options: ["(2, 3)", "(4, 1)", "(1, 4)", "(3, 2)"],
+                correct: 3
+            },
+            {
+                question: "What is the probability of getting exactly 2 heads in 3 coin tosses?",
+                options: ["1/4", "1/2", "3/8", "1/8"],
+                correct: 2
+            },
+            {
+                question: "Find the vertex of y = x² - 4x + 3",
+                options: ["(-2, -1)", "(-2, 1)", "(2, 1)", "(2, -1)"],
+                correct: 3
+            },
+            {
+                question: "What is the period of y = sin(2x)?",
+                options: ["4π", "π/2", "2π", "π"],
+                correct: 3
+            }
+        ];
+        loadQuestion();
+    </script>
+</body>
+</html>
