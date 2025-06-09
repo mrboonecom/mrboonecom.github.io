@@ -133,3 +133,12 @@ function resetQuiz() {
     answers = {};
     loadQuestion();
 }
+
+// Modal for GIF
+function openModal() {
+    document.getElementById('gif-modal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('gif-modal').style.display = 'none';
+}
