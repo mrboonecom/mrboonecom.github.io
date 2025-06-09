@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Level Math Tutoring - Mr.Boone</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>A-Level Math Tutoring - Mr.Boone</title>
+ <link rel="stylesheet" href="styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>A-Level Math Tutoring</h1>
-        <a href="index.html" class="btn">Back to Home</a>
-    </header>
-    <section class="curriculum-content">
-        <h2>Try These Top 10 A-Level Math Questions!</h2>
-        <p>Test your math skills with this free assessment! Want to be confident in A-Level math? Study with Mr.Boone!</p>
-        <div class="quiz-container" id="quiz-container"></div>
-    </section>
-    <section class="gif-section">
-        <h2>Learn with Mr.Boone!</h2>
-        <p>Watch Mr.Boone solve an A-Level math question!</p>
-        <div class="gif-container" onclick="openModal('alevel-gif-modal')">
-            <img src="assets/videos/ALEVEL_GIF.gif" alt="Mr.Boone solving A-Level question" class="gif-image">
-            <div class="play-overlay">
-                <i class="fas fa-play"></i>
-            </div>
-        </div>
-    </section>
-    <section class="signup">
-        <p>Hit the sign-up button on my Instagram profile for a free 30-minute trial!</p>
-        <a href="https://instagram.com/_mrboone" target="_blank" class="btn signup-btn">Sign Up for 30-Minute Trial Session</a>
-    </section>
-    <footer>
-        <p>© 2025 Mr.Boone's Math Tutoring</p>
-        <div class="social-links">
-            <a href="https://instagram.com/_mrboone" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://linkedin.com/in/supanut-suntikoon-01870926b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </div>
-        <p><a href="https://mrboone.com" target="_blank">mrboone.com</a></p>
-    </footer>
+ <header>
+ <h1>A-Level Math Tutoring</h1>
+ <a href="index.html" class="btn">Back to Home</a>
+ </header>
+ <section class="curriculum-content">
+ <h2>Try These Top 10 A-Level Math Questions!</h2>
+ <p>Test your math skills with this free assessment! Want to be confident in A-Level math? Study with Mr.Boone!</p>
+ <div class="quiz-container" id="quiz-container"></div>
+ </section>
+ <section class="gif-section">
+ <h2>Learn with Mr.Boone!</h2>
+ <p>Watch Mr.Boone solve an A-Level math question!</p>
+ <div class="gif-container" onclick="openModal('alevel-gif-modal')">
+ <img src="assets/videos/ALEVEL_GIF.gif" alt="Mr.Boone solving A-Level question" class="gif-image">
+ <div class="play-overlay">
+ <i class="fas fa-play"></i>
+ </div>
+ </div>
+ </section>
+ <section class="signup">
+ <p>Hit the sign-up button on my Instagram profile for a free 30-minute trial!</p>
+ <a href="https://instagram.com/_mrboone" target="_blank" class="btn signup-btn">Sign Up for 30-Minute Trial Session</a>
+ </section>
+ <footer>
+ <p>© 2025 Mr.Boone's Math Tutoring</p>
+ <div class="social-links">
+ <a href="https://instagram.com/_mrboone" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+ <a href="https://linkedin.com/in/supanut-suntikoon-01870926b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+ </div>
+ <p><a href="https://mrboone.com" target="_blank">mrboone.com</a></p>
+ </footer>
 
-    <!-- Modal for enlarged GIF -->
-    <div id="alevel-gif-modal" class="modal">
-        <span class="close-modal" onclick="closeModal('alevel-gif-modal')">×</span>
-        <img src="assets/videos/ALEVEL_GIF.gif" alt="Mr.Boone solving A-Level question" class="modal-gif">
-    </div>
+ <!-- Modal for enlarged GIF -->
+ <div id="alevel-gif-modal" class="modal">
+ <span class="close-modal" onclick="closeModal('alevel-gif-modal')">×</span>
+ <img src="assets/videos/ALEVEL_GIF.gif" alt="Mr.Boone solving A-Level question" class="modal-gif">
+ </div>
 
-    <script src="script.js"></script>
-    <script>
-        questions = [
-            {
-                question: "Find the derivative of f(x) = 2x³ + 3x² - 12x + 7",
-                options: ["6x² + 6x + 12", "2x² + 3x - 12", "6x² - 6x - 12", "6x² + 6x - 12"],
-                correct: 3
-            },
-            {
-                question: "Integrate ∫ (4x + 3) dx",
-                options: ["4x² + 3 + C", "2x² + 3 + C", "2x² + 3x + C", "4x² + 3x + C"],
-                correct: 2
-            },
-            {
-                question: "Solve: cos(x) = 0.5 for 0 ≤ x ≤ 2π",
-                options: ["x = π/4, 3π/4", "x = π/6, 5π/6", "x = π/2, 3π/2", "x = π/3, 5π/3"],
-                correct: 3
-            },
-            {
-                question: "What is the sum of the arithmetic sequence 2, 5, 8, ..., up to 10 terms?",
-                options: ["155", "175", "145", "165"],
-                correct: 2
-            },
-            {
-                question: "Find the equation of the tangent to y = x² at x = 2",
-                options: ["y = 2x + 4", "y = 4x - 4", "y = 2x - 4", "y = 4x + 4"],
-                correct: 1
-            },
-            {
-                question: "What is the value of ln(e²)?",
-                options: ["0", "e", "2", "1"],
-                correct: 2
-            },
-            {
-                question: "Solve the quadratic equation: 2x² - 8x + 6 = 0",
-                options: ["x = 2, 4", "x = 1, 4", "x = 2, 3", "x = 1, 3"],
-                correct: 3
-            },
-            {
-                question: "What is the modulus of the complex number z = 3 + 4i?",
-                options: ["7", "12", "9", "5"],
-                correct: 3
-            },
-            {
-                question: "If a = (2, 3) and b = (1, -1), what is a · b?",
-                options: ["1", "-5", "-1", "5"],
-                correct: 2
-            },
-            {
-                question: "What is the probability of drawing a red card from a standard deck of 52 cards?",
-                options: ["1/4", "1/3", "2/3", "1/2"],
-                correct: 3
-            }
-        ];
-        loadQuestion();
-    </script>
+ <script src="script.js"></script>
+ <script>
+ questions = [
+ {
+ question: "Find the derivative of f(x) = 2x³ + 3x² - 12x + 7",
+ options: ["6x² + 6x + 12", "2x² + 3x - 12", "6x² - 6x - 12", "6x² + 6x - 12"],
+ correct: 3
+ },
+ {
+ question: "Integrate ∫ (4x + 3) dx",
+ options: ["4x² + 3 + C", "2x² + 3 + C", "2x² + 3x + C", "4x² + 3x + C"],
+ correct: 2
+ },
+ {
+ question: "Solve: cos(x) = 0.5 for 0 ≤ x ≤ 2π",
+ options: ["x = π/4, 3π/4", "x = π/6, 5π/6", "x = π/2, 3π/2", "x = π/3, 5π/3"],
+ correct: 3
+ },
+ {
+ question: "What is the sum of the arithmetic sequence 2, 5, 8, ..., up to 10 terms?",
+ options: ["155", "175", "145", "165"],
+ correct: 2
+ },
+ {
+ question: "Find the equation of the tangent to y = x² at x = 2",
+ options: ["y = 2x + 4", "y = 4x - 4", "y = 2x - 4", "y = 4x + 4"],
+ correct: 1
+ },
+ {
+ question: "What is the value of ln(e²)?",
+ options: ["0", "e", "2", "1"],
+ correct: 2
+ },
+ {
+ question: "Solve the quadratic equation: 2x² - 8x + 6 = 0",
+ options: ["x = 2, 4", "x = 1, 4", "x = 2, 3", "x = 1, 3"],
+ correct: 3
+ },
+ {
+ question: "What is the modulus of the complex number z = 3 + 4i?",
+ options: ["7", "12", "9", "5"],
+ correct: 3
+ },
+ {
+ question: "If a = (2, 3) and b = (1, -1), what is a · b?",
+ options: ["1", "-5", "-1", "5"],
+ correct: 2
+ },
+ {
+ question: "What is the probability of drawing a red card from a standard deck of 52 cards?",
+ options: ["1/4", "1/3", "2/3", "1/2"],
+ correct: 3
+ }
+ ];
+ loadQuestion();
+ </script>
 </body>
 </html>
