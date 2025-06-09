@@ -16,17 +16,12 @@
     <section class="curriculum-content">
         <h2>Try These Top 10 SAT Math Questions!</h2>
         <p>Test your math skills with this free assessment! Want to be confident in SAT math? Study with Mr.Boone!</p>
-        <div class="quiz-container" id="quiz-container">
-            <div id="quiz-question" class="quiz-question"></div>
-            <div class="quiz-status" id="quiz-status"></div>
-            <button id="prev-question" onclick="prevQuestion()">Previous</button>
-            <button id="next-question" onclick="nextQuestion()">Next</button>
-        </div>
+        <div class="quiz-container" id="quiz-container"></div>
     </section>
     <section class="gif-section">
         <h2>Learn with Mr.Boone!</h2>
         <p>Watch Mr.Boone solve an SAT math question!</p>
-        <div class="gif-container" onclick="openModal()">
+        <div class="gif-container" onclick="openModal('sat-gif-modal')">
             <img src="assets/videos/SAT_GIF.gif" alt="Mr.Boone solving SAT question" class="gif-image">
             <div class="play-overlay">
                 <i class="fas fa-play"></i>
@@ -47,8 +42,8 @@
     </footer>
 
     <!-- Modal for enlarged GIF -->
-    <div id="gif-modal" class="modal">
-        <span class="close-modal" onclick="closeModal()">×</span>
+    <div id="sat-gif-modal" class="modal">
+        <span class="close-modal" onclick="closeModal('sat-gif-modal')">×</span>
         <img src="assets/videos/SAT_GIF.gif" alt="Mr.Boone solving SAT question" class="modal-gif">
     </div>
 
@@ -86,4 +81,27 @@
                 correct: 2
             },
             {
-                question: "Solve for
+                question: "Solve for y: 2y - 4 = 3y + 1",
+                options: ["y = 3", "y = -3", "y = 5", "y = -5"],
+                correct: 3
+            },
+            {
+                question: "What is the median of 2, 4, 6, 8, 10?",
+                options: ["8", "4", "10", "6"],
+                correct: 3
+            },
+            {
+                question: "If a triangle has angles 30° and 60°, what is the third angle?",
+                options: ["120°", "30°", "60°", "90°"],
+                correct: 3
+            },
+            {
+                question: "What is the value of | -7 | + 3?",
+                options: ["7", "12", "4", "10"],
+                correct: 3
+            }
+        ];
+        loadQuestion();
+    </script>
+</body>
+</html>
