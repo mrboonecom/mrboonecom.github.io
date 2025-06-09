@@ -16,17 +16,12 @@
     <section class="curriculum-content">
         <h2>Try These Top 10 A-Level Math Questions!</h2>
         <p>Test your math skills with this free assessment! Want to be confident in A-Level math? Study with Mr.Boone!</p>
-        <div class="quiz-container" id="quiz-container">
-            <div id="quiz-question" class="quiz-question"></div>
-            <div class="quiz-status" id="quiz-status"></div>
-            <button id="prev-question" onclick="prevQuestion()">Previous</button>
-            <button id="next-question" onclick="nextQuestion()">Next</button>
-        </div>
+        <div class="quiz-container" id="quiz-container"></div>
     </section>
     <section class="gif-section">
         <h2>Learn with Mr.Boone!</h2>
         <p>Watch Mr.Boone solve an A-Level math question!</p>
-        <div class="gif-container" onclick="openModal()">
+        <div class="gif-container" onclick="openModal('alevel-gif-modal')">
             <img src="assets/videos/ALEVEL_GIF.gif" alt="Mr.Boone solving A-Level question" class="gif-image">
             <div class="play-overlay">
                 <i class="fas fa-play"></i>
@@ -47,8 +42,8 @@
     </footer>
 
     <!-- Modal for enlarged GIF -->
-    <div id="gender-modal" class="modal">
-        <span class="close-modal" onclick="closeModal()">×</span>
+    <div id="alevel-gif-modal" class="modal">
+        <span class="close-modal" onclick="closeModal('alevel-gif-modal')">×</span>
         <img src="assets/videos/ALEVEL_GIF.gif" alt="Mr.Boone solving A-Level question" class="modal-gif">
     </div>
 
