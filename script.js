@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function showWord() {
-  const { word, pos, thai } = words[currentIndex];
+  const { word, pos, definition } = words[currentIndex];
   const card = document.getElementById("flashcard");
 
   card.innerHTML = `
     <div class="word">${word}</div>
     <div class="pos">${pos}</div>
-    <div class="thai">${thai}</div>
+    <div class="definition">${definition}</div>
   `;
 
   playAudio();
@@ -38,8 +38,8 @@ function addSwipeListeners() {
 
   document.addEventListener("touchend", e => {
     const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextWord();     // swipe left
-    else if (endX - startX > 50) prevWord(); // swipe right
+    if (startX - endX > 50) nextWord();
+    else if (endX - startX > 50) prevWord();
   });
 
   document.addEventListener("keydown", e => {
