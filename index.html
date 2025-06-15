@@ -1,87 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr.Boone's Math Tutoring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C2 Flashcards</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="igcse.html">IGCSE</a></li>
-            <li><a href="alevel.html">A-Level</a></li>
-            <li><a href="ib.html">IB</a></li>
-            <li><a href="sat.html">SAT</a></li>
-            <li><a href="bootcamp.html">Bootcamp</a></li>
-        </ul>
-    </nav>
-    <header>
-        <div class="animated-text">
-            <h1 class="slide-in">ARE YOU STRUGGLING WITH MATH?</h1>
-            <h2 class="fade-in">I CAN HELP!</h2>
-            <p class="slide-up">Mr.Boone, Math Tutor for IGCSE, A-Level, IB, SAT, and Thailand’s Exams.</p>
-            <p class="fade-in">Customized Zoom lessons in Thai/English.</p>
-            <p class="slide-in">Affordable: 600 THB/hr</p>
-            <p class="fade-in">Free practice PDFs</p>
-        </div>
-        <p class="construction">🚧 Site under construction! More content coming soon.</p>
-    </header>
-    <div class="banner">
-        <h2>New! Join Boone’s Math Bootcamp!</h2>
-        <p>Intensive practice for IGCSE, SAT, IB, and A-Level. <a href="bootcamp.html">Start Now!</a></p>
-    </div>
-    <section class="curriculum">
-        <h2>Choose Your Curriculum</h2>
-        <p>Preparing for a specific exam? Select below to take a free assessment test!</p>
-        <div class="curriculum-list">
-            <a href="igcse.html" class="curriculum-card">
-                <h3>IGCSE</h3>
-                <p>Master math for IGCSE exams.</p>
-            </a>
-            <a href="alevel.html" class="curriculum-card">
-                <h3>A-Level</h3>
-                <p>Excel in A-Level Math courses.</p>
-            </a>
-            <a href="ib.html" class="curriculum-card">
-                <h3>IB</h3>
-                <p>Excel in IB math courses.</p>
-            </a>
-            <a href="sat.html" class="curriculum-card">
-                <h3>SAT</h3>
-                <p>Boost your SAT math score.</p>
-            </a>
-            <a href="bootcamp.html" class="curriculum-card">
-                <h3>Boone’s Math Bootcamp</h3>
-                <p>Drill 1,000+ problems to master key math topics!</p>
-            </a>
-        </div>
-    </section>
-    <section class="game">
-        <h2>Play the Number Guess Game!</h2>
-        <p>Test your skills with this fun math game!</p>
-        <div class="game-container">
-            <p id="game-message">Guess a number between 1 and 100!</p>
-            <input type="number" id="guess-input" min="1" max="100">
-            <button onclick="checkGuess()">Submit Guess</button>
-            <p id="game-hint"></p>
-        </div>
-    </section>
-    <section class="signup">
-        <p>Hit the sign-up button on my Instagram profile for a free 30-minute trial!</p>
-        <a href="https://instagram.com/_mrboone" target="_blank" class="btn signup-btn">Sign Up for 30-Minute Trial Session</a>
-    </section>
-    <footer>
-        <p>© 2025 Mr.Boone's Math Tutoring</p>
-        <div class="social-links">
-            <a href="https://instagram.com/_mrboone" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://linkedin.com/in/supanut-suntikoon-01870926b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </div>
-        <p><a href="https://mrboone.com" target="_blank">mrboone.com</a></p>
-    </footer>
-    <script src="script.js"></script>
+  <div id="flashcard" onclick="playAudio()"></div>
+
+  <script src="words.json" type="application/json" id="words-data"></script>
+  <script src="script.js"></script>
 </body>
 </html>
