@@ -5,9 +5,9 @@ let audio = new Audio();
 document.addEventListener("DOMContentLoaded", async () => {
   const response = await fetch("words.json");
   words = await response.json();
-
   showWord();
   addSwipeListeners();
+  showOnboarding();
 });
 
 function showWord() {
@@ -24,16 +24,16 @@ function playAudio() {
 }
 
 function addSwipeListeners() {
-  let startX;
+  let startX = 0;
 
   document.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
   });
 
   document.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextWord();     // swipe left
-    else if (endX - startX > 50) prevWord(); // swipe right
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextWord();      // Swipe left
+    else if (endX - startX > 50) prevWord(); // Swipe right
   });
 
   document.addEventListener("keydown", e => {
@@ -54,4 +54,15 @@ function prevWord() {
     currentIndex--;
     showWord();
   }
+}
+
+function showOnboarding() {
+  if (!localStorage.getItem("seenOnboarding")) {
+    document.getElementById("onboarding").style.display = "flex";
+  }
+}
+
+function dismissOnboarding() {
+  document.getElementById("onboarding").style.display = "none";
+  localStorage.setItem("seenOnboarding", "true");
 }
