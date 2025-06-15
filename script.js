@@ -11,14 +11,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function showWord() {
-  const word = words[currentIndex];
+  const { word, pos, thai } = words[currentIndex];
   const card = document.getElementById("flashcard");
-  card.textContent = word;
+
+  card.innerHTML = `
+    <div class="word">${word}</div>
+    <div class="pos">${pos}</div>
+    <div class="thai">${thai}</div>
+  `;
+
   playAudio();
 }
 
 function playAudio() {
-  const word = words[currentIndex];
+  const { word } = words[currentIndex];
   audio.src = `audio/${word}.mp3`;
   audio.play();
 }
@@ -31,7 +37,7 @@ function addSwipeListeners() {
   });
 
   document.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
+    const endX = e.changedTouches[0].clientX;
     if (startX - endX > 50) nextWord();     // swipe left
     else if (endX - startX > 50) prevWord(); // swipe right
   });
