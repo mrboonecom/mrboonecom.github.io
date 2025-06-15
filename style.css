@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #fafafa;
+  font-family: 'Arial', sans-serif;
+}
+
+#flashcard {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  user-select: none;
+  transition: transform 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
