@@ -1,104 +1,512 @@
 [
-  "abrogate",
-  "acquiesce",
-  "adumbrate",
-  "alacrity",
-  "anachronistic",
-  "anathema",
-  "approbation",
-  "arrogate",
-  "ascetic",
-  "asperity",
-  "assiduous",
-  "beguile",
-  "bilk",
-  "blandishment",
-  "bombastic",
-  "calumny",
-  "capricious",
-  "cogent",
-  "concomitant",
-  "conflagration",
-  "conundrum",
-  "corpulent",
-  "cursory",
-  "defenestration",
-  "deleterious",
-  "demagogue",
-  "denigrate",
-  "despot",
-  "diaphanous",
-  "didactic",
-  "discomfit",
-  "disparate",
-  "effrontery",
-  "egregious",
-  "elucidate",
-  "emollient",
-  "enervate",
-  "ephemeral",
-  "epistolary",
-  "equanimity",
-  "equivocate",
-  "eschew",
-  "execrable",
-  "exculpate",
-  "exigent",
-  "extirpate",
-  "facetious",
-  "fatuous",
-  "feckless",
-  "florid",
-  "garrulous",
-  "grandiloquent",
-  "gregarious",
-  "harangue",
-  "hegemony",
-  "iconoclast",
-  "ignominious",
-  "impecunious",
-  "impetuous",
-  "implacable",
-  "impugn",
-  "inchoate",
-  "incontrovertible",
-  "inculcate",
-  "indefatigable",
-  "indolent",
-  "ineffable",
-  "inimical",
-  "inscrutable",
-  "insipid",
-  "invective",
-  "invidious",
-  "laconic",
-  "legerdemain",
-  "licentious",
-  "magnanimous",
-  "malediction",
-  "mendacious",
-  "meretricious",
-  "moribund",
-  "munificent",
-  "nefarious",
-  "obdurate",
-  "obfuscate",
-  "obstreperous",
-  "officious",
-  "parsimony",
-  "pellucid",
-  "penurious",
-  "perfidious",
-  "perspicacious",
-  "pertinacious",
-  "phlegmatic",
-  "portentous",
-  "precipitous",
-  "proclivity",
-  "propinquity",
-  "protean",
-  "puissant",
-  "recalcitrant",
-  "redolent",
-  "reprobate"
+  {
+    "word": "abrogate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'abrogate'"
+  },
+  {
+    "word": "acquiesce",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'acquiesce'"
+  },
+  {
+    "word": "adumbrate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'adumbrate'"
+  },
+  {
+    "word": "alacrity",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'alacrity'"
+  },
+  {
+    "word": "anachronistic",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'anachronistic'"
+  },
+  {
+    "word": "anathema",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'anathema'"
+  },
+  {
+    "word": "approbation",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'approbation'"
+  },
+  {
+    "word": "arrogate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'arrogate'"
+  },
+  {
+    "word": "ascetic",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'ascetic'"
+  },
+  {
+    "word": "asperity",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'asperity'"
+  },
+  {
+    "word": "assiduous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'assiduous'"
+  },
+  {
+    "word": "beguile",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'beguile'"
+  },
+  {
+    "word": "bilk",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'bilk'"
+  },
+  {
+    "word": "blandishment",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'blandishment'"
+  },
+  {
+    "word": "bombastic",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'bombastic'"
+  },
+  {
+    "word": "calumny",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'calumny'"
+  },
+  {
+    "word": "capricious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'capricious'"
+  },
+  {
+    "word": "cogent",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'cogent'"
+  },
+  {
+    "word": "concomitant",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'concomitant'"
+  },
+  {
+    "word": "conflagration",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'conflagration'"
+  },
+  {
+    "word": "conundrum",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'conundrum'"
+  },
+  {
+    "word": "corpulent",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'corpulent'"
+  },
+  {
+    "word": "cursory",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'cursory'"
+  },
+  {
+    "word": "defenestration",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'defenestration'"
+  },
+  {
+    "word": "deleterious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'deleterious'"
+  },
+  {
+    "word": "demagogue",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'demagogue'"
+  },
+  {
+    "word": "denigrate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'denigrate'"
+  },
+  {
+    "word": "despot",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'despot'"
+  },
+  {
+    "word": "diaphanous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'diaphanous'"
+  },
+  {
+    "word": "didactic",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'didactic'"
+  },
+  {
+    "word": "discomfit",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'discomfit'"
+  },
+  {
+    "word": "disparate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'disparate'"
+  },
+  {
+    "word": "effrontery",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'effrontery'"
+  },
+  {
+    "word": "egregious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'egregious'"
+  },
+  {
+    "word": "elucidate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'elucidate'"
+  },
+  {
+    "word": "emollient",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'emollient'"
+  },
+  {
+    "word": "enervate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'enervate'"
+  },
+  {
+    "word": "ephemeral",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'ephemeral'"
+  },
+  {
+    "word": "epistolary",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'epistolary'"
+  },
+  {
+    "word": "equanimity",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'equanimity'"
+  },
+  {
+    "word": "equivocate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'equivocate'"
+  },
+  {
+    "word": "eschew",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'eschew'"
+  },
+  {
+    "word": "execrable",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'execrable'"
+  },
+  {
+    "word": "exculpate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'exculpate'"
+  },
+  {
+    "word": "exigent",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'exigent'"
+  },
+  {
+    "word": "extirpate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'extirpate'"
+  },
+  {
+    "word": "facetious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'facetious'"
+  },
+  {
+    "word": "fatuous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'fatuous'"
+  },
+  {
+    "word": "feckless",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'feckless'"
+  },
+  {
+    "word": "florid",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'florid'"
+  },
+  {
+    "word": "garrulous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'garrulous'"
+  },
+  {
+    "word": "grandiloquent",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'grandiloquent'"
+  },
+  {
+    "word": "gregarious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'gregarious'"
+  },
+  {
+    "word": "harangue",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'harangue'"
+  },
+  {
+    "word": "hegemony",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'hegemony'"
+  },
+  {
+    "word": "iconoclast",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'iconoclast'"
+  },
+  {
+    "word": "ignominious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'ignominious'"
+  },
+  {
+    "word": "impecunious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'impecunious'"
+  },
+  {
+    "word": "impetuous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'impetuous'"
+  },
+  {
+    "word": "implacable",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'implacable'"
+  },
+  {
+    "word": "impugn",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'impugn'"
+  },
+  {
+    "word": "inchoate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'inchoate'"
+  },
+  {
+    "word": "incontrovertible",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'incontrovertible'"
+  },
+  {
+    "word": "inculcate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'inculcate'"
+  },
+  {
+    "word": "indefatigable",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'indefatigable'"
+  },
+  {
+    "word": "indolent",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'indolent'"
+  },
+  {
+    "word": "ineffable",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'ineffable'"
+  },
+  {
+    "word": "inimical",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'inimical'"
+  },
+  {
+    "word": "inscrutable",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'inscrutable'"
+  },
+  {
+    "word": "insipid",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'insipid'"
+  },
+  {
+    "word": "invective",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'invective'"
+  },
+  {
+    "word": "invidious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'invidious'"
+  },
+  {
+    "word": "laconic",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'laconic'"
+  },
+  {
+    "word": "legerdemain",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'legerdemain'"
+  },
+  {
+    "word": "licentious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'licentious'"
+  },
+  {
+    "word": "magnanimous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'magnanimous'"
+  },
+  {
+    "word": "malediction",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'malediction'"
+  },
+  {
+    "word": "mendacious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'mendacious'"
+  },
+  {
+    "word": "meretricious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'meretricious'"
+  },
+  {
+    "word": "moribund",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'moribund'"
+  },
+  {
+    "word": "munificent",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'munificent'"
+  },
+  {
+    "word": "nefarious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'nefarious'"
+  },
+  {
+    "word": "obdurate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'obdurate'"
+  },
+  {
+    "word": "obfuscate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'obfuscate'"
+  },
+  {
+    "word": "obstreperous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'obstreperous'"
+  },
+  {
+    "word": "officious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'officious'"
+  },
+  {
+    "word": "parsimony",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'parsimony'"
+  },
+  {
+    "word": "pellucid",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'pellucid'"
+  },
+  {
+    "word": "penurious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'penurious'"
+  },
+  {
+    "word": "perfidious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'perfidious'"
+  },
+  {
+    "word": "perspicacious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'perspicacious'"
+  },
+  {
+    "word": "pertinacious",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'pertinacious'"
+  },
+  {
+    "word": "phlegmatic",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'phlegmatic'"
+  },
+  {
+    "word": "portentous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'portentous'"
+  },
+  {
+    "word": "precipitous",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'precipitous'"
+  },
+  {
+    "word": "proclivity",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'proclivity'"
+  },
+  {
+    "word": "propinquity",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'propinquity'"
+  },
+  {
+    "word": "protean",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'protean'"
+  },
+  {
+    "word": "puissant",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'puissant'"
+  },
+  {
+    "word": "recalcitrant",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'recalcitrant'"
+  },
+  {
+    "word": "redolent",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'redolent'"
+  },
+  {
+    "word": "reprobate",
+    "pos": "(n.)",
+    "thai": "คำแปลของ 'reprobate'"
+  }
 ]
