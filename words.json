@@ -1,512 +1,512 @@
 [
   {
     "word": "abrogate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'abrogate'"
+    "pos": "VERB",
+    "definition": "To repeal or do away with a law, right, or formal agreement."
   },
   {
     "word": "acquiesce",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'acquiesce'"
+    "pos": "VERB",
+    "definition": "To accept something reluctantly but without protest."
   },
   {
     "word": "adumbrate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'adumbrate'"
+    "pos": "VERB",
+    "definition": "To foreshadow or symbolize vaguely."
   },
   {
     "word": "alacrity",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'alacrity'"
+    "pos": "NOUN",
+    "definition": "Brisk and cheerful readiness."
   },
   {
     "word": "anachronistic",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'anachronistic'"
+    "pos": "ADJECTIVE",
+    "definition": "Belonging to a period other than that being portrayed."
   },
   {
     "word": "anathema",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'anathema'"
+    "pos": "NOUN",
+    "definition": "Something or someone that one vehemently dislikes."
   },
   {
     "word": "approbation",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'approbation'"
+    "pos": "NOUN",
+    "definition": "Approval or praise."
   },
   {
     "word": "arrogate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'arrogate'"
+    "pos": "VERB",
+    "definition": "To take or claim something without justification."
   },
   {
     "word": "ascetic",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'ascetic'"
+    "pos": "ADJECTIVE",
+    "definition": "Characterized by severe self-discipline and abstention from indulgence."
   },
   {
     "word": "asperity",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'asperity'"
+    "pos": "NOUN",
+    "definition": "Harshness of tone or manner."
   },
   {
     "word": "assiduous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'assiduous'"
+    "pos": "ADJECTIVE",
+    "definition": "Showing great care and perseverance."
   },
   {
     "word": "beguile",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'beguile'"
+    "pos": "VERB",
+    "definition": "To charm or enchant someone, often in a deceptive way."
   },
   {
     "word": "bilk",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'bilk'"
+    "pos": "VERB",
+    "definition": "To cheat or defraud someone."
   },
   {
     "word": "blandishment",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'blandishment'"
+    "pos": "NOUN",
+    "definition": "A flattering or pleasing statement used to persuade someone gently."
   },
   {
     "word": "bombastic",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'bombastic'"
+    "pos": "ADJECTIVE",
+    "definition": "High-sounding but with little meaning; inflated."
   },
   {
     "word": "calumny",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'calumny'"
+    "pos": "NOUN",
+    "definition": "The making of false statements to damage someone’s reputation."
   },
   {
     "word": "capricious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'capricious'"
+    "pos": "ADJECTIVE",
+    "definition": "Given to sudden and unaccountable changes of mood or behavior."
   },
   {
     "word": "cogent",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'cogent'"
+    "pos": "ADJECTIVE",
+    "definition": "Clear, logical, and convincing."
   },
   {
     "word": "concomitant",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'concomitant'"
+    "pos": "ADJECTIVE",
+    "definition": "Naturally accompanying or associated."
   },
   {
     "word": "conflagration",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'conflagration'"
+    "pos": "NOUN",
+    "definition": "An extensive fire that destroys a great deal of land or property."
   },
   {
     "word": "conundrum",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'conundrum'"
+    "pos": "VERB",
+    "definition": "A definition for 'conundrum' will go here."
   },
   {
     "word": "corpulent",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'corpulent'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'corpulent' will go here."
   },
   {
     "word": "cursory",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'cursory'"
+    "pos": "VERB",
+    "definition": "A definition for 'cursory' will go here."
   },
   {
     "word": "defenestration",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'defenestration'"
+    "pos": "VERB",
+    "definition": "A definition for 'defenestration' will go here."
   },
   {
     "word": "deleterious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'deleterious'"
+    "pos": "NOUN",
+    "definition": "A definition for 'deleterious' will go here."
   },
   {
     "word": "demagogue",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'demagogue'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'demagogue' will go here."
   },
   {
     "word": "denigrate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'denigrate'"
+    "pos": "NOUN",
+    "definition": "A definition for 'denigrate' will go here."
   },
   {
     "word": "despot",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'despot'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'despot' will go here."
   },
   {
     "word": "diaphanous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'diaphanous'"
+    "pos": "VERB",
+    "definition": "A definition for 'diaphanous' will go here."
   },
   {
     "word": "didactic",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'didactic'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'didactic' will go here."
   },
   {
     "word": "discomfit",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'discomfit'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'discomfit' will go here."
   },
   {
     "word": "disparate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'disparate'"
+    "pos": "NOUN",
+    "definition": "A definition for 'disparate' will go here."
   },
   {
     "word": "effrontery",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'effrontery'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'effrontery' will go here."
   },
   {
     "word": "egregious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'egregious'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'egregious' will go here."
   },
   {
     "word": "elucidate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'elucidate'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'elucidate' will go here."
   },
   {
     "word": "emollient",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'emollient'"
+    "pos": "VERB",
+    "definition": "A definition for 'emollient' will go here."
   },
   {
     "word": "enervate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'enervate'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'enervate' will go here."
   },
   {
     "word": "ephemeral",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'ephemeral'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'ephemeral' will go here."
   },
   {
     "word": "epistolary",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'epistolary'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'epistolary' will go here."
   },
   {
     "word": "equanimity",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'equanimity'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'equanimity' will go here."
   },
   {
     "word": "equivocate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'equivocate'"
+    "pos": "VERB",
+    "definition": "A definition for 'equivocate' will go here."
   },
   {
     "word": "eschew",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'eschew'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'eschew' will go here."
   },
   {
     "word": "execrable",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'execrable'"
+    "pos": "VERB",
+    "definition": "A definition for 'execrable' will go here."
   },
   {
     "word": "exculpate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'exculpate'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'exculpate' will go here."
   },
   {
     "word": "exigent",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'exigent'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'exigent' will go here."
   },
   {
     "word": "extirpate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'extirpate'"
+    "pos": "VERB",
+    "definition": "A definition for 'extirpate' will go here."
   },
   {
     "word": "facetious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'facetious'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'facetious' will go here."
   },
   {
     "word": "fatuous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'fatuous'"
+    "pos": "NOUN",
+    "definition": "A definition for 'fatuous' will go here."
   },
   {
     "word": "feckless",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'feckless'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'feckless' will go here."
   },
   {
     "word": "florid",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'florid'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'florid' will go here."
   },
   {
     "word": "garrulous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'garrulous'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'garrulous' will go here."
   },
   {
     "word": "grandiloquent",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'grandiloquent'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'grandiloquent' will go here."
   },
   {
     "word": "gregarious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'gregarious'"
+    "pos": "VERB",
+    "definition": "A definition for 'gregarious' will go here."
   },
   {
     "word": "harangue",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'harangue'"
+    "pos": "NOUN",
+    "definition": "A definition for 'harangue' will go here."
   },
   {
     "word": "hegemony",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'hegemony'"
+    "pos": "VERB",
+    "definition": "A definition for 'hegemony' will go here."
   },
   {
     "word": "iconoclast",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'iconoclast'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'iconoclast' will go here."
   },
   {
     "word": "ignominious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'ignominious'"
+    "pos": "NOUN",
+    "definition": "A definition for 'ignominious' will go here."
   },
   {
     "word": "impecunious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'impecunious'"
+    "pos": "VERB",
+    "definition": "A definition for 'impecunious' will go here."
   },
   {
     "word": "impetuous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'impetuous'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'impetuous' will go here."
   },
   {
     "word": "implacable",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'implacable'"
+    "pos": "NOUN",
+    "definition": "A definition for 'implacable' will go here."
   },
   {
     "word": "impugn",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'impugn'"
+    "pos": "VERB",
+    "definition": "A definition for 'impugn' will go here."
   },
   {
     "word": "inchoate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'inchoate'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'inchoate' will go here."
   },
   {
     "word": "incontrovertible",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'incontrovertible'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'incontrovertible' will go here."
   },
   {
     "word": "inculcate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'inculcate'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'inculcate' will go here."
   },
   {
     "word": "indefatigable",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'indefatigable'"
+    "pos": "VERB",
+    "definition": "A definition for 'indefatigable' will go here."
   },
   {
     "word": "indolent",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'indolent'"
+    "pos": "NOUN",
+    "definition": "A definition for 'indolent' will go here."
   },
   {
     "word": "ineffable",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'ineffable'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'ineffable' will go here."
   },
   {
     "word": "inimical",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'inimical'"
+    "pos": "NOUN",
+    "definition": "A definition for 'inimical' will go here."
   },
   {
     "word": "inscrutable",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'inscrutable'"
+    "pos": "NOUN",
+    "definition": "A definition for 'inscrutable' will go here."
   },
   {
     "word": "insipid",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'insipid'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'insipid' will go here."
   },
   {
     "word": "invective",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'invective'"
+    "pos": "VERB",
+    "definition": "A definition for 'invective' will go here."
   },
   {
     "word": "invidious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'invidious'"
+    "pos": "VERB",
+    "definition": "A definition for 'invidious' will go here."
   },
   {
     "word": "laconic",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'laconic'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'laconic' will go here."
   },
   {
     "word": "legerdemain",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'legerdemain'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'legerdemain' will go here."
   },
   {
     "word": "licentious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'licentious'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'licentious' will go here."
   },
   {
     "word": "magnanimous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'magnanimous'"
+    "pos": "VERB",
+    "definition": "A definition for 'magnanimous' will go here."
   },
   {
     "word": "malediction",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'malediction'"
+    "pos": "VERB",
+    "definition": "A definition for 'malediction' will go here."
   },
   {
     "word": "mendacious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'mendacious'"
+    "pos": "VERB",
+    "definition": "A definition for 'mendacious' will go here."
   },
   {
     "word": "meretricious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'meretricious'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'meretricious' will go here."
   },
   {
     "word": "moribund",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'moribund'"
+    "pos": "NOUN",
+    "definition": "A definition for 'moribund' will go here."
   },
   {
     "word": "munificent",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'munificent'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'munificent' will go here."
   },
   {
     "word": "nefarious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'nefarious'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'nefarious' will go here."
   },
   {
     "word": "obdurate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'obdurate'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'obdurate' will go here."
   },
   {
     "word": "obfuscate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'obfuscate'"
+    "pos": "VERB",
+    "definition": "A definition for 'obfuscate' will go here."
   },
   {
     "word": "obstreperous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'obstreperous'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'obstreperous' will go here."
   },
   {
     "word": "officious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'officious'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'officious' will go here."
   },
   {
     "word": "parsimony",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'parsimony'"
+    "pos": "NOUN",
+    "definition": "A definition for 'parsimony' will go here."
   },
   {
     "word": "pellucid",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'pellucid'"
+    "pos": "NOUN",
+    "definition": "A definition for 'pellucid' will go here."
   },
   {
     "word": "penurious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'penurious'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'penurious' will go here."
   },
   {
     "word": "perfidious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'perfidious'"
+    "pos": "VERB",
+    "definition": "A definition for 'perfidious' will go here."
   },
   {
     "word": "perspicacious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'perspicacious'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'perspicacious' will go here."
   },
   {
     "word": "pertinacious",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'pertinacious'"
+    "pos": "VERB",
+    "definition": "A definition for 'pertinacious' will go here."
   },
   {
     "word": "phlegmatic",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'phlegmatic'"
+    "pos": "VERB",
+    "definition": "A definition for 'phlegmatic' will go here."
   },
   {
     "word": "portentous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'portentous'"
+    "pos": "VERB",
+    "definition": "A definition for 'portentous' will go here."
   },
   {
     "word": "precipitous",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'precipitous'"
+    "pos": "NOUN",
+    "definition": "A definition for 'precipitous' will go here."
   },
   {
     "word": "proclivity",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'proclivity'"
+    "pos": "VERB",
+    "definition": "A definition for 'proclivity' will go here."
   },
   {
     "word": "propinquity",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'propinquity'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'propinquity' will go here."
   },
   {
     "word": "protean",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'protean'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'protean' will go here."
   },
   {
     "word": "puissant",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'puissant'"
+    "pos": "NOUN",
+    "definition": "A definition for 'puissant' will go here."
   },
   {
     "word": "recalcitrant",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'recalcitrant'"
+    "pos": "NOUN",
+    "definition": "A definition for 'recalcitrant' will go here."
   },
   {
     "word": "redolent",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'redolent'"
+    "pos": "ADVERB",
+    "definition": "A definition for 'redolent' will go here."
   },
   {
     "word": "reprobate",
-    "pos": "(n.)",
-    "thai": "คำแปลของ 'reprobate'"
+    "pos": "ADJECTIVE",
+    "definition": "A definition for 'reprobate' will go here."
   }
 ]
