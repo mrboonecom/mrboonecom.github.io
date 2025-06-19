@@ -11,13 +11,25 @@ async function loadWords() {
     }
 }
 
+// Shuffle array using Fisher-Yates algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 // Initialize app
 async function init() {
-    const words = await loadWords();
+    let words = await loadWords();
     if (words.length === 0) {
         document.getElementById('word').textContent = 'Error loading words';
         return;
     }
+
+    // Shuffle words on load
+    words = shuffleArray(words);
 
     let currentIndex = 0;
     const flashcard = document.getElementById('flashcard');
@@ -79,16 +91,14 @@ async function init() {
     // Swipe handling with Hammer.js
     const hammer = new Hammer(flashcard);
     hammer.on('swipeleft', () => {
-        if (currentIndex < words.length - 1) {
-            currentIndex++;
-            updateCard(currentIndex, 'right');
-        }
+        if (isTransitioning) return;
+        currentIndex = (currentIndex + 1) % words.length; // Loop to first card if at end
+        updateCard(currentIndex, 'right');
     });
     hammer.on('swiperight', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCard(currentIndex, 'left');
-        }
+        if (isTransitioning) return;
+        currentIndex = (currentIndex - 1 + words.length) % words.length; // Loop to last card if at start
+        updateCard(currentIndex, 'left');
     });
 
     // Tap to play audio
