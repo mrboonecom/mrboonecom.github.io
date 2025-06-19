@@ -65,12 +65,12 @@ async function init() {
         }, 400); // Match CSS transition duration
     }
 
-    // Play audio with 0.3s delay
+    // Play audio with 0.2s delay
     function playAudioWithDelay() {
         if (audioTimeout) clearTimeout(audioTimeout);
         audioTimeout = setTimeout(() => {
             audioEl.play().catch(error => console.error('Audio playback error:', error));
-        }, 300); // 300ms = 0.3 seconds
+        }, 200); // 200ms = 0.2 seconds
     }
 
     // Initial card
