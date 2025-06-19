@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>C2 Flashcards</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOEFL Vocabulary Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="flashcard" onclick="playAudio()"></div>
-
-  <script src="words.json" type="application/json" id="words-data"></script>
-  <script src="script.js"></script>
+    <div class="container">
+        <div class="flashcard" id="flashcard">
+            <h2 id="word"></h2>
+            <p id="part-of-speech" class="part-of-speech"></p>
+            <p id="definition"></p>
+            <p id="example" class="example"></p>
+        </div>
+    </div>
+    <audio id="word-audio" preload="none"></audio>
+    <script src="lib/js-yaml.min.js"></script>
+    <script src="lib/hammer.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
