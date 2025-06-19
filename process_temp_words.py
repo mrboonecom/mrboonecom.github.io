@@ -32,24 +32,24 @@ def save_yaml_file(file_path, data):
     except Exception as e:
         print(f"Error saving YAML file {file_path}: {e}")
 
-def remove_duplicates(temp_words, main_words):
-    """Remove duplicates from temp_words based on main_words."""
+def check_duplicates(temp_words, main_words):
+    """Identify duplicates and return non-duplicate temp words."""
     main_word_set = {word['word'].lower() for word in main_words}
-    cleaned_words = []
+    non_duplicates = []
     duplicates_found = []
 
     for word_data in temp_words:
         if word_data['word'].lower() in main_word_set:
             duplicates_found.append(word_data['word'])
         else:
-            cleaned_words.append(word_data)
+            non_duplicates.append(word_data)
 
     if duplicates_found:
-        print(f"Removed duplicates from {temp_yaml_file}: {', '.join(duplicates_found)}")
+        print(f"Skipped duplicates: {', '.join(duplicates_found)}")
     else:
         print("No duplicates found in temp_words.yaml.")
 
-    return cleaned_words
+    return non_duplicates
 
 def generate_audio(word, audio_dir):
     """Generate audio for a word using gTTS and save to audio_dir."""
@@ -65,7 +65,7 @@ def generate_audio(word, audio_dir):
         print(f"Error generating audio for '{word}': {e}")
 
 def verify_audio_files(words, audio_dir):
-    """Ensure all words have corresponding audio files."""
+    """Ensure all words in words.yaml have corresponding audio files."""
     missing_audio = []
     for word_data in words:
         word = word_data['word']
@@ -76,7 +76,16 @@ def verify_audio_files(words, audio_dir):
     if missing_audio:
         print(f"Generated missing audio files for: {', '.join(missing_audio)}")
     else:
-        print("All words in temp_words.yaml have corresponding audio files.")
+        print("All words in words.yaml have corresponding audio files.")
+
+def clear_temp_file():
+    """Clear temp_words.yaml after processing."""
+    try:
+        with open(temp_yaml_file, 'w', encoding='utf-8') as file:
+            file.write("")  # Empty the file
+        print(f"Cleared {temp_yaml_file} for next batch.")
+    except Exception as e:
+        print(f"Error clearing {temp_yaml_file}: {e}")
 
 def main():
     # Load main and temp YAML files
@@ -87,22 +96,27 @@ def main():
         print(f"No words found in {temp_yaml_file}. Exiting.")
         return
 
-    # Remove duplicates from temp_words
-    cleaned_temp_words = remove_duplicates(temp_words, main_words)
+    # Check for duplicates and get non-duplicate words
+    non_duplicate_words = check_duplicates(temp_words, main_words)
 
-    if not cleaned_temp_words:
-        print("No new words to process after removing duplicates. Exiting.")
+    if not non_duplicate_words:
+        print("No new words to add after duplicate check. Clearing temp_words.yaml.")
+        clear_temp_file()
         return
 
-    # Save cleaned temp_words back to temp_yaml_file
-    save_yaml_file(temp_yaml_file, cleaned_temp_words)
+    # Append non-duplicate words to main_words
+    updated_main_words = main_words + non_duplicate_words
+    save_yaml_file(main_yaml_file, updated_main_words)
 
-    # Generate audio for cleaned temp words
-    for word_data in cleaned_temp_words:
+    # Generate audio for new words
+    for word_data in non_duplicate_words:
         generate_audio(word_data['word'], audio_dir)
 
-    # Verify all temp words have audio files
-    verify_audio_files(cleaned_temp_words, audio_dir)
+    # Verify all words in main database have audio files
+    verify_audio_files(updated_main_words, audio_dir)
+
+    # Clear temp_words.yaml for next batch
+    clear_temp_file()
 
 if __name__ == "__main__":
     main()
