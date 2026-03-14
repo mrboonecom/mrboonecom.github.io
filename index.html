@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขนมสอดไส้พรีเมียมเชียงใหม่ | Premium Bites สำหรับงานจัดเลี้ยงและสัมมนา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* สีน้ำเงินเข้ม/เทาดำ */
+            --accent-color: #d4af37; /* สีทองพรีเมียม */
+            --leaf-green: #4a5d23; /* สีเขียวใบตอง */
+            --bg-light: #f9f6f0; /* สีเบจอ่อน */
+            --white: #ffffff;
+            --text-main: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Navbar --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--leaf-green);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-order-nav {
+            background-color: var(--leaf-green);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            font-weight: 300;
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #bfa030;
+        }
+
+        /* --- Services / Packages --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+        }
+
+        .packages {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent-color);
+            transition: transform 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .package-card h3 {
+            color: var(--leaf-green);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #777;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features li::before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* --- How it works --- */
+        .process {
+            background-color: var(--leaf-green);
+            color: var(--white);
+            padding: 80px 20px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px auto;
+        }
+
+        /* --- Quote Form --- */
+        .quote-section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .calc-result {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--leaf-green);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Premium<span>Bites</span></div>
+            <nav class="nav-links">
+                <a href="#packages">แพ็กเกจจัดเบรก</a>
+                <a href="#process">ขั้นตอนการสั่ง</a>
+                <a href="#quote" class="btn-order-nav">ขอใบเสนอราคา</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>ยกระดับงานจัดเลี้ยงของคุณด้วย<br>ขนมไทยพรีเมียม</h1>
+        <p>ขนมสอดไส้สูตรต้นตำรับ พอดีคำ บรรจุในแพ็กเกจจิ้งรักษ์โลก สำหรับงานประชุม สัมมนา และห้องรับรองผู้บริหารในจังหวัดเชียงใหม่ (รับผลิตตามออเดอร์ล่วงหน้าเท่านั้น เพื่อความสดใหม่สูงสุด)</p>
+        <a href="#quote" class="btn-main">ขอใบเสนอราคา / ตรวจสอบคิวว่าง</a>
+    </section>
+
+    <section id="packages" class="packages">
+        <h2 class="section-title">รูปแบบแพ็กเกจ (Snack Box)</h2>
+        <div class="package-grid">
+            
+            <div class="package-card">
+                <h3>ชุดสัมมนามาตรฐาน<br>(Symposium Box)</h3>
+                <div class="price">฿60 <span>/ กล่อง</span></div>
+                <ul class="features">
+                    <li>ขนมสอดไส้พอดีคำ 2 ชิ้น</li>
+                    <li>บรรจุในกล่องคราฟต์รักษ์โลก</li>
+                    <li>รองด้วยใบตองสดสะอาด</li>
+                    <li>เหมาะสำหรับงานประชุมขนาดกลาง-ใหญ่</li>
+                </ul>
+            </div>
+
+            <div class="package-card" style="border-top-color: var(--primary-color); transform: scale(1.05);">
+                <h3>ชุดผู้บริหาร<br>(Executive Box)</h3>
+                <div class="price">฿100 <span>/ กล่อง</span></div>
+                <ul class="features">
+                    <li>ขนมสอดไส้พรีเมียม 4 ชิ้น</li>
+                    <li>บรรจุในกล่องลายจักสานไม้ไผ่หรูหรา</li>
+                    <li>คัดสรรวัตถุดิบและกะทิออร์แกนิก</li>
+                    <li>เหมาะสำหรับแขก VIP หรือห้องบอร์ดบริหาร</li>
+                </ul>
+            </div>
+
+            <div class="package-card">
+                <h3>จัดถาดพรีเมียม<br>(Premium Buffet Tray)</h3>
+                <div class="price">฿1,200 <span>/ ถาด</span></div>
+                <ul class="features">
+                    <li>ขนมสอดไส้พอดีคำ 50 ชิ้น</li>
+                    <li>จัดเรียงบนโตกหรือถาดสานแบบล้านนา</li>
+                    <li>บริการจัดตกแต่งไลน์อาหารว่าง</li>
+                    <li>ประหยัดพื้นที่และลดการใช้กล่อง</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <h2 class="section-title" style="color: white;">ทำไมต้องสั่งล่วงหน้า 7 วัน?</h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-num">1</div>
+                <h3>ลดขยะอาหารเป็นศูนย์</h3>
+                <p>เราจัดเตรียมวัตถุดิบตามจำนวนผู้เข้าร่วมงานจริงเท่านั้น ไม่มีของเหลือทิ้งหรือค้างคืน</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">2</div>
+                <h3>คัดสรรวัตถุดิบสดใหม่</h3>
+                <p>เราสั่งมะพร้าวและใบตองสดจากสวนล่วงหน้า เพื่อให้ได้คุณภาพที่ดีที่สุดสำหรับงานของคุณ</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">3</div>
+                <h3>พิถีพิถันทุกขั้นตอน</h3>
+                <p>เราควบคุมมาตรฐานความสะอาดระดับสูงสุด และทำสดใหม่ในเช้าวันจัดส่ง</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="quote-section">
+        <h2 class="section-title">ขอใบเสนอราคา / เช็คคิว</h2>
+        <div class="quote-form">
+            <form id="orderForm">
+                <div class="form-group">
+                    <label>ชื่อองค์กร / มหาวิทยาลัย / โรงแรม (ในเชียงใหม่)</label>
+                    <input type="text" id="company" required placeholder="เช่น คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่">
+                </div>
+                
+                <div class="form-group">
+                    <label>วันที่จัดงาน (ต้องสั่งล่วงหน้าอย่างน้อย 7 วัน)</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>รูปแบบแพ็กเกจที่ต้องการ</label>
+                    <select id="packageType" onchange="calculateEstimate()">
+                        <option value="0">กรุณาเลือกแพ็กเกจ</option>
+                        <option value="60">ชุดสัมมนามาตรฐาน (60 บาท/กล่อง)</option>
+                        <option value="100">ชุดผู้บริหาร (100 บาท/กล่อง)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>จำนวนผู้เข้าร่วมงาน (ขั้นต่ำ 50 ท่าน)</label>
+                    <input type="number" id="guestCount" min="50" placeholder="50" onkeyup="calculateEstimate()" onchange="calculateEstimate()">
+                </div>
+
+                <div class="calc-result" id="resultBox" style="display: none;">
+                    <h4>ประเมินราคาเบื้องต้น:</h4>
+                    <p style="font-size: 1.5rem; color: var(--leaf-green); font-weight: bold;" id="totalPrice">฿0</p>
+                    <p style="font-size: 0.9rem; color: #666;">*ราคานี้รวมบริการจัดส่งฟรีในเขตอำเภอเมืองเชียงใหม่</p>
+                </div>
+
+                <button type="submit" class="submit-btn">ส่งข้อมูลเพื่อรับใบเสนอราคา (PDF)</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Premium Bites ขนมสอดไส้พรีเมียมเชียงใหม่. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">ผลิตอย่างพิถีพิถัน สะอาด ปลอดภัย ด้วยมาตรฐานความใส่ใจสูงสุด</p>
+    </footer>
+
+    <script>
+        // Set minimum date to 7 days from today
+        document.addEventListener('DOMContentLoaded', function() {
+            let today = new Date();
+            today.setDate(today.getDate() + 7); // บวกไป 7 วัน
+            let minDate = today.toISOString().split('T')[0];
+            document.getElementById("eventDate").setAttribute("min", minDate);
+        });
+
+        // Function calculate total price
+        function calculateEstimate() {
+            let pricePerBox = parseInt(document.getElementById("packageType").value);
+            let count = parseInt(document.getElementById("guestCount").value);
+            let resultBox = document.getElementById("resultBox");
+            let totalPriceDisplay = document.getElementById("totalPrice");
+
+            if (pricePerBox > 0 && count >= 50) {
+                let total = pricePerBox * count;
+                totalPriceDisplay.innerText = "฿" + total.toLocaleString();
+                resultBox.style.display = "block";
+            } else {
+                resultBox.style.display = "none";
+            }
+        }
+
+        // Handle Form Submit
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let company = document.getElementById("company").value;
+            alert("ขอบคุณครับ " + company + "!\n\nระบบได้รับข้อมูลเบื้องต้นแล้ว ทางเราจะรีบตรวจสอบคิวว่างและติดต่อกลับพร้อมใบเสนอราคาภายใน 24 ชั่วโมงครับ");
+            // ในอนาคตสามารถนำโค้ดส่วนนี้ไปเชื่อมต่อกับ LINE Notify หรือส่งเข้า Email ผ่าน backend ได้
+        });
+    </script>
+
+</body>
+</html>
