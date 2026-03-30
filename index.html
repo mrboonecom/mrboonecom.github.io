@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Speedruns | Elite Coaching</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #3b82f6;
+            --accent: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Session Grid */
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .session-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .session-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+
+        .session-title {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--text-main);
+        }
+
+        .session-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+
+        .session-desc {
+            color: var(--text-muted);
+            flex-grow: 1;
+        }
+
+        .book-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+            transition: background-color 0.2s;
+        }
+
+        .book-btn:hover {
+            background-color: #2563eb;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #334155;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--bg-color);
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .pay-btn {
+            background-color: var(--accent);
+            width: 100%;
+            color: #000;
+        }
+
+        .pay-btn:hover {
+            background-color: #059669;
+            color: white;
+        }
+
+        .close-btn {
+            float: right;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Math Speedruns</h1>
+        <p class="subtitle">High-performance bilingual math coaching. No boring lectures. Just intense, gamified problem-solving to build unstoppable discipline.</p>
+    </header>
+
+    <div class="container">
+        <div class="session-grid">
+            <div class="session-card">
+                <h2 class="session-title">The 1,000 Quadratic Gauntlet</h2>
+                <div class="session-price">2,500 THB</div>
+                <p class="session-desc">
+                    <strong>The Mission:</strong> We stay on Zoom until you solve 1,000 equations. <br><br>
+                    <strong>The Tool:</strong> Using our custom HUD web app, we track your speed and accuracy in real-time. Hit milestones to unlock visual badges. Prove you have the stamina to dominate IGCSE/IB math.
+                </p>
+                <button class="book-btn" onclick="openModal('The 1,000 Quadratic Gauntlet', 2500)">Select Challenge</button>
+            </div>
+
+            <div class="session-card">
+                <h2 class="session-title">IGCSE Paper 1 Sprint</h2>
+                <div class="session-price">1,800 THB</div>
+                <p class="session-desc">
+                    <strong>The Mission:</strong> A full past paper in half the allotted time.<br><br>
+                    <strong>The Tool:</strong> We share a high-res Wacom canvas. I throw rapid-fire curveballs at you. One wrong answer resets the timer. Pure adrenaline, pure accuracy check.
+                </p>
+                <button class="book-btn" onclick="openModal('IGCSE Paper 1 Sprint', 1800)">Select Challenge</button>
+            </div>
+
+            <div class="session-card">
+                <h2 class="session-title">The Cryptographic Heist</h2>
+                <div class="session-price">2,000 THB</div>
+                <p class="session-desc">
+                    <strong>The Mission:</strong> Use logic and algebra to "hack" through 5 levels of security.<br><br>
+                    <strong>The Tool:</strong> An interactive puzzle interface where your math answers unlock the next Zoom breakout room. Learn applied mathematics under a ticking clock.
+                </p>
+                <button class="book-btn" onclick="openModal('The Cryptographic Heist', 2000)">Select Challenge</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Book Session</h2>
+            <p style="color: var(--accent); font-weight: bold; font-size: 1.2rem;" id="modalPrice">0 THB</p>
+            
+            <form id="bookingForm" onsubmit="handlePayment(event)">
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" required placeholder="Enter student's full name">
+                </div>
+                <div class="form-group">
+                    <label for="parentEmail">Parent Email (For diagnostic report)</label>
+                    <input type="email" id="parentEmail" required placeholder="name@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="schoolInfo">Current School</label>
+                    <input type="text" id="schoolInfo" placeholder="e.g., NIST, PREM, CMIS">
+                </div>
+                <button type="submit" class="book-btn pay-btn">Proceed to Secure Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentSession = '';
+        let currentPrice = 0;
+
+        function openModal(sessionName, price) {
+            currentSession = sessionName;
+            currentPrice = price;
+            
+            document.getElementById('modalTitle').innerText = 'Book: ' + sessionName;
+            document.getElementById('modalPrice').innerText = price.toLocaleString() + ' THB';
+            document.getElementById('bookingModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.getElementById('bookingForm').reset();
+        }
+
+        function handlePayment(event) {
+            event.preventDefault(); // Prevents the form from refreshing the page
+            
+            const name = document.getElementById('studentName').value;
+            const email = document.getElementById('parentEmail').value;
+
+            // In a real application, this is where you send data to your Python backend
+            console.log(`Booking initiated for ${name} (${email}) - ${currentSession} at ${currentPrice} THB`);
+            
+            // Simulating redirection to a payment gateway
+            alert(`Redirecting to secure payment gateway to process ${currentPrice.toLocaleString()} THB for ${currentSession}...\n\n(This is where Omise or Stripe takes over)`);
+            
+            closeModal();
+        }
+
+        // Close modal if user clicks outside the box
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
