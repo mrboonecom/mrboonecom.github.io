@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching</title>
+    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.0</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&family=Roboto:wght@400;700&family=Fira+Code:wght@500;700&display=swap');
 
@@ -81,14 +85,14 @@
             box-sizing: border-box;
         }
 
-        /* --- THE HUD CONSOLE (NEW) --- */
+        /* --- THE HUD CONSOLE --- */
         .hud-wrapper {
             margin: 3rem 0;
             position: relative;
         }
 
         .hud-wrapper::before {
-            content: 'LIVE DEMO';
+            content: 'LIVE DEMO (v2.0)';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -164,7 +168,7 @@
 
         .hud-display {
             text-align: center;
-            min-height: 180px;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -172,23 +176,24 @@
         }
 
         .hud-equation {
-            font-family: 'Fira Code', monospace;
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-size: 2.5rem; /* KaTeX scaling */
             margin: 0;
             color: var(--text-light);
             text-shadow: 0 0 15px rgba(255,255,255,0.2);
         }
 
         .hud-answer {
-            font-family: 'Fira Code', monospace;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--beast-yellow);
             margin-top: 1rem;
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
+        }
+
+        /* Override KaTeX default text color to match the neon vibe */
+        .hud-answer .katex {
+            color: var(--beast-yellow);
         }
 
         .hud-answer.revealed {
@@ -334,7 +339,7 @@
                 
                 <div class="hud-display">
                     <div class="hud-equation" id="displayEquation">--</div>
-                    <div class="hud-answer" id="displayAnswer">x₁ = -- | x₂ = --</div>
+                    <div class="hud-answer" id="displayAnswer"></div>
                 </div>
 
                 <div class="hud-controls">
@@ -411,7 +416,6 @@
 
         async function initHUD() {
             try {
-                // Attempt to load the JSONL file. 
                 const response = await fetch('quads.jsonl');
                 if (!response.ok) throw new Error("File not found");
                 const text = await response.text();
@@ -438,15 +442,24 @@
             const randomIndex = Math.floor(Math.random() * quadsDatabase.length);
             currentQuad = quadsDatabase[randomIndex];
 
-            // Update UI 
+            // Update UI Metadata
             const levelInfo = levelDefinitions[currentQuad.difficulty_level] || {name: "Unknown Level", desc: "Unknown parameters"};
-            
             document.getElementById('levelName').innerText = levelInfo.name;
             document.getElementById('levelDesc').innerText = levelInfo.desc;
-            document.getElementById('displayEquation').innerText = currentQuad.equation;
             
-            // Format Answer String (hidden initially)
-            document.getElementById('displayAnswer').innerText = `x₁ = ${currentQuad.solution_x1}   |   x₂ = ${currentQuad.solution_x2}`;
+            // --- VERSION 2.0 KATEX RENDER ENGINE ---
+            // Render the main equation
+            katex.render(currentQuad.equation, document.getElementById('displayEquation'), {
+                throwOnError: false,
+                displayMode: true
+            });
+            
+            // Format and render the answer string using KaTeX LaTeX syntax
+            const answerString = `x_1 = ${currentQuad.solution_x1} \\quad | \\quad x_2 = ${currentQuad.solution_x2}`;
+            katex.render(answerString, document.getElementById('displayAnswer'), {
+                throwOnError: false,
+                displayMode: true
+            });
             
             // Reset states
             document.getElementById('displayAnswer').classList.remove('revealed');
