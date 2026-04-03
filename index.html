@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.1</title>
+    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.2</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -92,7 +92,7 @@
         }
 
         .hud-wrapper::before {
-            content: 'LIVE DEMO (v2.1)';
+            content: 'LIVE DEMO (v2.2)';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -124,6 +124,11 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 30px rgba(0, 242, 254, 0.2);
         }
 
+        .hud-console.error-state {
+            border-color: #ef4444; /* Red border for error */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 30px rgba(239, 68, 68, 0.2);
+        }
+
         .hud-header {
             display: flex;
             justify-content: space-between;
@@ -148,6 +153,12 @@
             text-transform: uppercase;
         }
 
+        .error-badge {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border-color: #ef4444;
+        }
+
         .hud-level-desc {
             color: #d4d4d8;
             font-size: 0.95rem;
@@ -156,6 +167,10 @@
             line-height: 1.5;
             border-left: 3px solid var(--beast-pink);
             padding-left: 1rem;
+        }
+
+        .hud-level-desc.error-desc {
+            border-left-color: #ef4444;
         }
 
         .hud-counter {
@@ -192,6 +207,13 @@
             margin: 0;
             color: var(--text-light);
             text-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+
+        .hud-equation.error-text {
+            font-family: 'Fira Code', monospace;
+            font-size: 3rem;
+            color: #ef4444;
+            letter-spacing: 5px;
         }
 
         .hud-answer {
@@ -241,6 +263,13 @@
         .btn-reveal:hover {
             background: #3f3f46;
             border-color: #52525b;
+        }
+
+        .btn-reveal:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #18181b;
+            border-color: #27272a;
         }
 
         .btn-next {
@@ -419,14 +448,6 @@
         let currentQuad = null;
         let repsCompleted = 0;
 
-        // Fallback Database directly injected just in case the fetch() fails
-        const fallbackData = `{"id": "B1-L1-Q1", "equation": "x^2 + 13x + 40 = 0", "solution_x1": -5, "solution_x2": -8, "difficulty_level": 1}
-{"id": "B1-L2-Q1", "equation": "x^2 - 13x + 42 = 0", "solution_x1": 6, "solution_x2": 7, "difficulty_level": 2}
-{"id": "B1-L3-Q1", "equation": "x^2 - 5x - 24 = 0", "solution_x1": 8, "solution_x2": -3, "difficulty_level": 3}
-{"id": "B1-L4-Q1", "equation": "x^2 - 64 = 0", "solution_x1": 8, "solution_x2": -8, "difficulty_level": 4}
-{"id": "B1-L5-Q1", "equation": "x^2 - 4x = 0", "solution_x1": 0, "solution_x2": 4, "difficulty_level": 5}
-{"id": "B1-L8-Q1", "equation": "x^2 - 6x = 7", "solution_x1": 7, "solution_x2": -1, "difficulty_level": 8}`;
-
         async function initHUD() {
             try {
                 const response = await fetch('quads.jsonl');
@@ -434,8 +455,29 @@
                 const text = await response.text();
                 parseData(text);
             } catch (error) {
-                console.warn("Could not fetch quads.jsonl. Falling back to injected sample data.");
-                parseData(fallbackData);
+                console.error("Database Connection Failed:", error);
+                
+                // Trigger NO DATA UI State
+                const hudBox = document.getElementById('hudBox');
+                hudBox.classList.add('error-state');
+                
+                const levelBadge = document.getElementById('levelName');
+                levelBadge.innerText = "SYS.ERROR // OFFLINE";
+                levelBadge.classList.add('error-badge');
+                
+                const levelDesc = document.getElementById('levelDesc');
+                levelDesc.innerHTML = "<strong>CRITICAL:</strong> Database connection failed. <code>quads.jsonl</code> could not be located. Ensure local server is running.";
+                levelDesc.classList.add('error-desc');
+                
+                const displayEq = document.getElementById('displayEquation');
+                displayEq.innerText = "NO DATA";
+                displayEq.classList.add('error-text');
+                
+                document.getElementById('totalQuads').innerText = "0";
+                
+                // Lock Controls
+                document.getElementById('btnReveal').disabled = true;
+                document.getElementById('btnNext').disabled = true;
             }
         }
 
