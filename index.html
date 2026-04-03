@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.0</title>
+    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.1</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -79,7 +79,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             width: 100%;
             padding: 0 2rem 4rem;
             box-sizing: border-box;
@@ -92,7 +92,7 @@
         }
 
         .hud-wrapper::before {
-            content: 'LIVE DEMO (v2.0)';
+            content: 'LIVE DEMO (v2.1)';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -131,6 +131,7 @@
             border-bottom: 1px solid #333;
             padding-bottom: 1rem;
             margin-bottom: 2rem;
+            gap: 2rem;
         }
 
         .hud-level-badge {
@@ -138,19 +139,23 @@
             background: rgba(0, 242, 254, 0.1);
             color: var(--beast-blue);
             border: 1px solid var(--beast-blue);
-            padding: 0.3rem 0.8rem;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
+            padding: 0.4rem 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1rem;
             border-radius: 4px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             text-transform: uppercase;
         }
 
         .hud-level-desc {
-            color: #a1a1aa;
+            color: #d4d4d8;
             font-size: 0.95rem;
             margin: 0;
-            max-width: 400px;
+            max-width: 650px;
+            line-height: 1.5;
+            border-left: 3px solid var(--beast-pink);
+            padding-left: 1rem;
         }
 
         .hud-counter {
@@ -158,12 +163,19 @@
             font-family: 'Fira Code', monospace;
             font-size: 1.2rem;
             color: #71717a;
+            min-width: 120px;
         }
 
         .hud-counter span {
             color: var(--beast-pink);
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: bold;
+        }
+        
+        .hud-counter .total-quads {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-weight: normal;
         }
 
         .hud-display {
@@ -176,7 +188,7 @@
         }
 
         .hud-equation {
-            font-size: 2.5rem; /* KaTeX scaling */
+            font-size: 2.8rem; /* KaTeX scaling */
             margin: 0;
             color: var(--text-light);
             text-shadow: 0 0 15px rgba(255,255,255,0.2);
@@ -185,13 +197,12 @@
         .hud-answer {
             font-size: 1.8rem;
             color: var(--beast-yellow);
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
         }
 
-        /* Override KaTeX default text color to match the neon vibe */
         .hud-answer .katex {
             color: var(--beast-yellow);
         }
@@ -209,7 +220,7 @@
 
         .btn-hud {
             flex: 1;
-            padding: 1rem;
+            padding: 1.2rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 1.1rem;
@@ -218,6 +229,7 @@
             text-transform: uppercase;
             transition: all 0.2s;
             border: none;
+            letter-spacing: 1px;
         }
 
         .btn-reveal {
@@ -333,7 +345,8 @@
                         <p class="hud-level-desc" id="levelDesc">Establishing connection to problem database...</p>
                     </div>
                     <div class="hud-counter">
-                        REPS<br><span id="repCounter">0</span> / 1000
+                        REPS<br>
+                        <span id="repCounter">0</span> <span class="total-quads">/ <span id="totalQuads">--</span></span>
                     </div>
                 </div>
                 
@@ -354,7 +367,7 @@
             <ul class="rule-list">
                 <li><strong>Zero Distractions:</strong> It's just you, me, and a shared digital Wacom canvas on Zoom. We lock in.</li>
                 <li><strong>The 80% Threshold:</strong> We solve dynamically generated quadratics using the HUD. You must maintain an 80% accuracy rate, or the milestone resets.</li>
-                <li><strong>No Retreat:</strong> We do not end the Zoom call until you have successfully executed 1,000 equations. We build muscle memory through volume.</li>
+                <li><strong>No Retreat:</strong> We do not end the Zoom call until you have successfully executed the exact volume required for your curriculum. We build muscle memory through volume.</li>
                 <li><strong>Data-Driven Dominance:</strong> Parents receive a full post-action report detailing speed, accuracy, and mechanical bottlenecks.</li>
             </ul>
             <div class="price-tag">4,500 <span>THB / MISSION</span></div>
@@ -388,18 +401,18 @@
     <script>
         // --- HUD ENGINE ---
         
-        // Data Definitions based on Master Prompt
+        // Fully Mapped Data Definitions based on Master Prompt Intel
         const levelDefinitions = {
-            1: { name: "Level 1: The Baseline", desc: "Standard quadratics. All positive. Pure speed and rhythm." },
-            2: { name: "Level 2: Negative Resistance", desc: "Positive constant, negative middle. Train your brain for negative sums." },
-            3: { name: "Level 3: The Whiplash", desc: "Mixed signs. Calculate the difference without dropping the negative." },
-            4: { name: "Level 4: The Phantom Load", desc: "Difference of squares. Recognize the disguised pattern instantly." },
-            5: { name: "Level 5: The Zero Trap", desc: "Missing constant. Factor the x. Never divide by x." },
-            6: { name: "Level 6: The Heavy Plate", desc: "Prime leading coefficient. Structural resistance increases." },
-            7: { name: "Level 7: Max Tension", desc: "Composite leading coefficient. The cognitive load skyrockets." },
-            8: { name: "Level 8: The Uneven Terrain", desc: "Scrambled terms. Re-balance the equation to zero before solving." },
-            9: { name: "Level 9: The Fracture Zone", desc: "Fractions. Clear the denominators to build a clean quadratic." },
-            10: { name: "Level 10: The Terminator", desc: "Irrational roots. Deploy the quadratic formula to survive." }
+            1: { name: "Level 1: The Baseline", desc: "Standard & Positive: The leading coefficient (a) is 1. All signs are positive. Roots are negative integers. Used to build raw speed and rhythm before the resistance hits." },
+            2: { name: "Level 2: Negative Resistance", desc: "Hidden Positives: The constant (c) is positive, but the middle term (b) is negative. Forces the brain to recognize that negative sums create positive products." },
+            3: { name: "Level 3: The Whiplash", desc: "Mixed Signs: The constant (c) is negative, meaning the roots have opposite signs. Tests mental agility by forcing subtraction instead of addition." },
+            4: { name: "Level 4: The Phantom Load", desc: "Difference of Squares: The middle term (b) is zero. Trains stealth speed. Students who try standard factoring here waste precious time." },
+            5: { name: "Level 5: The Zero Trap", desc: "Missing Constant: The constant (c) is zero. This targets a fatal flaw: dividing by x and losing the zero root. Requires factoring out x." },
+            6: { name: "Level 6: The Heavy Plate", desc: "Prime Coefficient: The leading coefficient (a) is a prime number (2, 3, 5). Introduces structural resistance, requiring cross-multiplication or grouping." },
+            7: { name: "Level 7: Max Tension", desc: "Composite Coefficient: The leading coefficient (a) is a composite number (4, 6, 8). Cognitive overload. Multiple combinations exist for the front and back terms." },
+            8: { name: "Level 8: The Uneven Terrain", desc: "Scrambled Terms: The equation does not equal zero. Tests discipline. Students must reorganize the equation before solving." },
+            9: { name: "Level 9: The Fracture Zone", desc: "Fractions: Contains denominators. Requires clearing fractions first to build a clean quadratic. Targets core algebraic conditioning." },
+            10: { name: "Level 10: The Terminator", desc: "Irrational Roots: Cannot be factored. Forces the student to abandon pattern recognition and deploy the Quadratic Formula under fatigue." }
         };
 
         let quadsDatabase = [];
@@ -431,6 +444,9 @@
                                    .filter(line => line.trim() !== '')
                                    .map(line => JSON.parse(line));
             
+            // Set dynamic total quads count in the HUD
+            document.getElementById('totalQuads').innerText = quadsDatabase.length;
+            
             // Initial Load
             loadRandomQuad();
         }
@@ -442,19 +458,18 @@
             const randomIndex = Math.floor(Math.random() * quadsDatabase.length);
             currentQuad = quadsDatabase[randomIndex];
 
-            // Update UI Metadata
+            // Update UI Metadata mapping the properties
             const levelInfo = levelDefinitions[currentQuad.difficulty_level] || {name: "Unknown Level", desc: "Unknown parameters"};
             document.getElementById('levelName').innerText = levelInfo.name;
-            document.getElementById('levelDesc').innerText = levelInfo.desc;
+            document.getElementById('levelDesc').innerHTML = `<strong>Core Characteristic & Trap:</strong> ${levelInfo.desc}`;
             
-            // --- VERSION 2.0 KATEX RENDER ENGINE ---
-            // Render the main equation
+            // Render the main equation using KaTeX
             katex.render(currentQuad.equation, document.getElementById('displayEquation'), {
                 throwOnError: false,
                 displayMode: true
             });
             
-            // Format and render the answer string using KaTeX LaTeX syntax
+            // Format and render the answer string using KaTeX
             const answerString = `x_1 = ${currentQuad.solution_x1} \\quad | \\quad x_2 = ${currentQuad.solution_x2}`;
             katex.render(answerString, document.getElementById('displayAnswer'), {
                 throwOnError: false,
