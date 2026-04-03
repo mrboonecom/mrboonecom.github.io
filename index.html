@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&family=Roboto:wght@400;700&family=Fira+Code:wght@500;700&display=swap');
 
         :root {
             --bg-dark: #09090b;
@@ -14,6 +14,7 @@
             --beast-pink: #fe0979;
             --beast-yellow: #ffea00;
             --text-light: #fafafa;
+            --console-bg: #000000;
         }
 
         body {
@@ -31,7 +32,7 @@
         /* Hero Section */
         header {
             text-align: center;
-            padding: 6rem 1rem 3rem;
+            padding: 5rem 1rem 2rem;
             width: 100%;
             background: radial-gradient(circle at center, rgba(254, 9, 121, 0.15) 0%, var(--bg-dark) 70%);
         }
@@ -52,7 +53,7 @@
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 5rem;
+            font-size: 4.5rem;
             text-transform: uppercase;
             margin: 0;
             line-height: 1;
@@ -66,14 +67,13 @@
         }
 
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             max-width: 800px;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
             color: #a1a1aa;
             line-height: 1.6;
         }
 
-        /* The Challenge Details */
         .container {
             max-width: 900px;
             width: 100%;
@@ -81,53 +81,191 @@
             box-sizing: border-box;
         }
 
+        /* --- THE HUD CONSOLE (NEW) --- */
+        .hud-wrapper {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .hud-wrapper::before {
+            content: 'LIVE DEMO';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--beast-blue);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            z-index: 10;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+        }
+
+        .hud-console {
+            background-color: var(--console-bg);
+            border: 2px solid #27272a;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 20px rgba(0, 242, 254, 0.05);
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s;
+        }
+
+        .hud-console.active {
+            border-color: var(--beast-blue);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .hud-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hud-level-badge {
+            display: inline-block;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--beast-blue);
+            border: 1px solid var(--beast-blue);
+            padding: 0.3rem 0.8rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .hud-level-desc {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            margin: 0;
+            max-width: 400px;
+        }
+
+        .hud-counter {
+            text-align: right;
+            font-family: 'Fira Code', monospace;
+            font-size: 1.2rem;
+            color: #71717a;
+        }
+
+        .hud-counter span {
+            color: var(--beast-pink);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .hud-display {
+            text-align: center;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hud-equation {
+            font-family: 'Fira Code', monospace;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0;
+            color: var(--text-light);
+            text-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+
+        .hud-answer {
+            font-family: 'Fira Code', monospace;
+            font-size: 2rem;
+            color: var(--beast-yellow);
+            margin-top: 1rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .hud-answer.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hud-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-hud {
+            flex: 1;
+            padding: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-reveal {
+            background: #27272a;
+            color: white;
+            border: 1px solid #3f3f46;
+        }
+
+        .btn-reveal:hover {
+            background: #3f3f46;
+            border-color: #52525b;
+        }
+
+        .btn-next {
+            background: var(--beast-blue);
+            color: #000;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-next.ready {
+            opacity: 1;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
+        .btn-next.ready:hover {
+            background: #00d2de;
+            transform: scale(1.02);
+        }
+
+        /* Static Layouts */
         .gauntlet-box {
             background-color: var(--card-bg);
             border: 3px solid #27272a;
             border-radius: 16px;
             padding: 3rem;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-
-        .gauntlet-box::before {
-            content: '';
-            position: absolute;
-            top: -3px; left: -3px; right: -3px; bottom: -3px;
-            border-radius: 16px;
-            background: linear-gradient(45deg, var(--beast-blue), var(--beast-pink));
-            z-index: -1;
-            opacity: 0.5;
         }
 
         .rules-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
-            color: var(--beast-blue);
+            color: var(--beast-pink);
             margin-top: 0;
             text-transform: uppercase;
             border-bottom: 2px solid #3f3f46;
             padding-bottom: 1rem;
         }
 
-        .rule-list {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-        }
-
-        .rule-list li {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .rule-list li::before {
-            content: '🔥';
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
+        .rule-list { list-style: none; padding: 0; margin: 2rem 0; }
+        .rule-list li { font-size: 1.1rem; margin-bottom: 1.2rem; display: flex; align-items: flex-start; }
+        .rule-list li::before { content: '🔥'; font-size: 1.5rem; margin-right: 1rem; }
 
         .price-tag {
             text-align: center;
@@ -135,116 +273,40 @@
             font-size: 3.5rem;
             font-weight: 900;
             color: var(--text-light);
-            margin: 3rem 0 1rem;
+            margin: 2rem 0 1rem;
         }
+        .price-tag span { font-size: 1.5rem; color: var(--beast-yellow); }
 
-        .price-tag span {
-            font-size: 1.5rem;
-            color: var(--beast-yellow);
-        }
-
-        /* Giant CTA Button */
-        .cta-container {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
+        .cta-container { text-align: center; margin-top: 2rem; }
+        
         .book-btn {
             background: var(--beast-pink);
-            color: white;
-            border: none;
-            padding: 1.5rem 4rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            cursor: pointer;
-            border-radius: 8px;
-            text-transform: uppercase;
-            transition: all 0.2s ease;
-            box-shadow: 0 0 30px rgba(254, 9, 121, 0.4);
-            animation: pulse 2s infinite;
+            color: white; border: none; padding: 1.5rem 4rem;
+            font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900;
+            cursor: pointer; border-radius: 8px; text-transform: uppercase;
+            transition: all 0.2s ease; box-shadow: 0 0 30px rgba(254, 9, 121, 0.4);
         }
-
-        .book-btn:hover {
-            background: #d90066;
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(254, 9, 121, 0.6);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
+        .book-btn:hover { background: #d90066; transform: scale(1.05); }
 
         /* Modal UX */
         .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            justify-content: center;
-            align-items: center;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); z-index: 100;
+            justify-content: center; align-items: center;
         }
-
         .modal-content {
-            background: var(--card-bg);
-            border: 2px solid var(--beast-blue);
-            padding: 3rem;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            box-shadow: 0 0 50px rgba(0, 242, 254, 0.2);
+            background: var(--card-bg); border: 2px solid var(--beast-blue);
+            padding: 3rem; border-radius: 12px; width: 90%; max-width: 500px; position: relative;
         }
-
-        .close-btn {
-            position: absolute;
-            top: 1rem; right: 1.5rem;
-            font-size: 2rem;
-            color: #71717a;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
+        .close-btn { position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; color: #71717a; cursor: pointer; }
         .close-btn:hover { color: white; }
-
         input, select {
-            width: 100%;
-            padding: 1.2rem;
-            margin-bottom: 1.5rem;
-            background: var(--bg-dark);
-            border: 2px solid #3f3f46;
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            border-radius: 6px;
-            box-sizing: border-box;
-            transition: border-color 0.2s;
+            width: 100%; padding: 1.2rem; margin-bottom: 1.5rem; background: var(--bg-dark);
+            border: 2px solid #3f3f46; color: white; font-family: 'Roboto', sans-serif; border-radius: 6px; box-sizing: border-box;
         }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--beast-blue);
-        }
-
-        .pay-btn {
-            background: var(--beast-blue);
-            color: #000;
-            width: 100%;
-            padding: 1.2rem;
-            font-size: 1.2rem;
-            animation: none;
-            box-shadow: none;
-        }
-        
-        .pay-btn:hover { 
-            background: #00d2de; 
-            transform: translateY(-2px);
-        }
+        input:focus, select:focus { outline: none; border-color: var(--beast-blue); }
+        .pay-btn { background: var(--beast-blue); color: #000; width: 100%; padding: 1.2rem; font-size: 1.2rem; box-shadow: none; }
+        .pay-btn:hover { background: #00d2de; }
 
     </style>
 </head>
@@ -253,23 +315,44 @@
     <header>
         <div class="alert-badge">IGCSE Extended Math (0580)</div>
         <h1>THE 1,000 QUADRATIC <br><span class="highlight">GAUNTLET</span></h1>
-        <p class="subtitle">Bilingual (Thai/English) extreme coaching for international school students. Building a mathematical mindset requires relentless reps and undeniable endurance. We drill the ultimate IGCSE gatekeeper until you can't get it wrong.</p>
+        <p class="subtitle">Bilingual (Thai/English) extreme coaching. Building a mathematical mindset requires relentless reps and undeniable endurance. We drill the ultimate IGCSE gatekeeper until you can't get it wrong.</p>
     </header>
 
     <div class="container">
+        
+        <div class="hud-wrapper">
+            <div class="hud-console" id="hudBox">
+                <div class="hud-header">
+                    <div>
+                        <div class="hud-level-badge" id="levelName">SYS.INIT // LOADING</div>
+                        <p class="hud-level-desc" id="levelDesc">Establishing connection to problem database...</p>
+                    </div>
+                    <div class="hud-counter">
+                        REPS<br><span id="repCounter">0</span> / 1000
+                    </div>
+                </div>
+                
+                <div class="hud-display">
+                    <div class="hud-equation" id="displayEquation">--</div>
+                    <div class="hud-answer" id="displayAnswer">x₁ = -- | x₂ = --</div>
+                </div>
+
+                <div class="hud-controls">
+                    <button class="btn-hud btn-reveal" id="btnReveal" onclick="handleReveal()">REVEAL ROOTS</button>
+                    <button class="btn-hud btn-next" id="btnNext" onclick="loadRandomQuad()" disabled>NEXT EQUATION ❯</button>
+                </div>
+            </div>
+        </div>
+
         <div class="gauntlet-box">
             <h2 class="rules-title">The Rules of Engagement</h2>
             <ul class="rule-list">
                 <li><strong>Zero Distractions:</strong> It's just you, me, and a shared digital Wacom canvas on Zoom. We lock in.</li>
-                <li><strong>The 80% Threshold:</strong> We will solve dynamically generated quadratics using our custom HUD app. You must maintain an 80% accuracy rate, or the milestone resets.</li>
-                <li><strong>No Retreat:</strong> We do not end the Zoom call until you have successfully executed 1,000 equations. We build muscle memory through pure volume.</li>
-                <li><strong>Data-Driven Dominance:</strong> Parents receive a full post-action report detailing speed, accuracy, and specific mechanical bottlenecks.</li>
+                <li><strong>The 80% Threshold:</strong> We solve dynamically generated quadratics using the HUD. You must maintain an 80% accuracy rate, or the milestone resets.</li>
+                <li><strong>No Retreat:</strong> We do not end the Zoom call until you have successfully executed 1,000 equations. We build muscle memory through volume.</li>
+                <li><strong>Data-Driven Dominance:</strong> Parents receive a full post-action report detailing speed, accuracy, and mechanical bottlenecks.</li>
             </ul>
-
-            <div class="price-tag">
-                4,500 <span>THB / MISSION</span>
-            </div>
-
+            <div class="price-tag">4,500 <span>THB / MISSION</span></div>
             <div class="cta-container">
                 <button class="book-btn" onclick="openModal()">ACCEPT THE CHALLENGE</button>
             </div>
@@ -279,14 +362,13 @@
     <div class="modal" id="bookingModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 style="font-family: 'Montserrat', sans-serif; margin-top: 0; color: var(--text-light);">SECURE YOUR SLOT</h2>
-            <p style="color: #a1a1aa; margin-bottom: 2rem;">You are booking: <strong>The 1,000 Quadratic Gauntlet (4,500 THB)</strong></p>
-            
+            <h2 style="font-family: 'Montserrat', sans-serif; margin-top: 0;">SECURE YOUR SLOT</h2>
+            <p style="color: #a1a1aa; margin-bottom: 2rem;">You are booking: <strong>The 1,000 Quadratic Gauntlet</strong></p>
             <form id="bookingForm" onsubmit="processBooking(event)">
                 <input type="text" id="studentName" required placeholder="Student's Full Name">
-                <input type="email" id="parentEmail" required placeholder="Parent's Email Address (For Reports)">
+                <input type="email" id="parentEmail" required placeholder="Parent's Email Address">
                 <select id="schoolName" required>
-                    <option value="" disabled selected>Select Current International School</option>
+                    <option value="" disabled selected>Select International School</option>
                     <option value="Prem">Prem Tinsulanonda</option>
                     <option value="CMIS">CMIS</option>
                     <option value="NIST">NIST</option>
@@ -299,39 +381,115 @@
     </div>
 
     <script>
-        function openModal() {
-            document.getElementById('bookingModal').style.display = 'flex';
+        // --- HUD ENGINE ---
+        
+        // Data Definitions based on Master Prompt
+        const levelDefinitions = {
+            1: { name: "Level 1: The Baseline", desc: "Standard quadratics. All positive. Pure speed and rhythm." },
+            2: { name: "Level 2: Negative Resistance", desc: "Positive constant, negative middle. Train your brain for negative sums." },
+            3: { name: "Level 3: The Whiplash", desc: "Mixed signs. Calculate the difference without dropping the negative." },
+            4: { name: "Level 4: The Phantom Load", desc: "Difference of squares. Recognize the disguised pattern instantly." },
+            5: { name: "Level 5: The Zero Trap", desc: "Missing constant. Factor the x. Never divide by x." },
+            6: { name: "Level 6: The Heavy Plate", desc: "Prime leading coefficient. Structural resistance increases." },
+            7: { name: "Level 7: Max Tension", desc: "Composite leading coefficient. The cognitive load skyrockets." },
+            8: { name: "Level 8: The Uneven Terrain", desc: "Scrambled terms. Re-balance the equation to zero before solving." },
+            9: { name: "Level 9: The Fracture Zone", desc: "Fractions. Clear the denominators to build a clean quadratic." },
+            10: { name: "Level 10: The Terminator", desc: "Irrational roots. Deploy the quadratic formula to survive." }
+        };
+
+        let quadsDatabase = [];
+        let currentQuad = null;
+        let repsCompleted = 0;
+
+        // Fallback Database directly injected just in case the fetch() fails
+        const fallbackData = `{"id": "B1-L1-Q1", "equation": "x^2 + 13x + 40 = 0", "solution_x1": -5, "solution_x2": -8, "difficulty_level": 1}
+{"id": "B1-L2-Q1", "equation": "x^2 - 13x + 42 = 0", "solution_x1": 6, "solution_x2": 7, "difficulty_level": 2}
+{"id": "B1-L3-Q1", "equation": "x^2 - 5x - 24 = 0", "solution_x1": 8, "solution_x2": -3, "difficulty_level": 3}
+{"id": "B1-L4-Q1", "equation": "x^2 - 64 = 0", "solution_x1": 8, "solution_x2": -8, "difficulty_level": 4}
+{"id": "B1-L5-Q1", "equation": "x^2 - 4x = 0", "solution_x1": 0, "solution_x2": 4, "difficulty_level": 5}
+{"id": "B1-L8-Q1", "equation": "x^2 - 6x = 7", "solution_x1": 7, "solution_x2": -1, "difficulty_level": 8}`;
+
+        async function initHUD() {
+            try {
+                // Attempt to load the JSONL file. 
+                const response = await fetch('quads.jsonl');
+                if (!response.ok) throw new Error("File not found");
+                const text = await response.text();
+                parseData(text);
+            } catch (error) {
+                console.warn("Could not fetch quads.jsonl. Falling back to injected sample data.");
+                parseData(fallbackData);
+            }
         }
 
-        function closeModal() {
-            document.getElementById('bookingModal').style.display = 'none';
-            document.getElementById('bookingForm').reset();
+        function parseData(rawText) {
+            quadsDatabase = rawText.split('\n')
+                                   .filter(line => line.trim() !== '')
+                                   .map(line => JSON.parse(line));
+            
+            // Initial Load
+            loadRandomQuad();
         }
 
-        function processBooking(event) {
-            event.preventDefault();
-            
-            const payload = {
-                session_type: "IGCSE_QUADRATIC_GAUNTLET_1000",
-                price_thb: 4500,
-                student_name: document.getElementById('studentName').value,
-                parent_email: document.getElementById('parentEmail').value,
-                school: document.getElementById('schoolName').value
-            };
+        function loadRandomQuad() {
+            if (quadsDatabase.length === 0) return;
 
-            console.log("Sending to Python Backend:", payload);
+            // Pick random quadratic
+            const randomIndex = Math.floor(Math.random() * quadsDatabase.length);
+            currentQuad = quadsDatabase[randomIndex];
+
+            // Update UI 
+            const levelInfo = levelDefinitions[currentQuad.difficulty_level] || {name: "Unknown Level", desc: "Unknown parameters"};
             
-            alert(`Initiating secure checkout sequence for ${payload.student_name}...\n\n(In production, this payload hits your FastAPI backend to generate a Stripe/Omise payment link.)`);
+            document.getElementById('levelName').innerText = levelInfo.name;
+            document.getElementById('levelDesc').innerText = levelInfo.desc;
+            document.getElementById('displayEquation').innerText = currentQuad.equation;
+            
+            // Format Answer String (hidden initially)
+            document.getElementById('displayAnswer').innerText = `x₁ = ${currentQuad.solution_x1}   |   x₂ = ${currentQuad.solution_x2}`;
+            
+            // Reset states
+            document.getElementById('displayAnswer').classList.remove('revealed');
+            document.getElementById('btnReveal').style.display = 'block';
+            
+            const btnNext = document.getElementById('btnNext');
+            btnNext.disabled = true;
+            btnNext.classList.remove('ready');
+            
+            document.getElementById('hudBox').classList.remove('active');
+        }
+
+        function handleReveal() {
+            // Show Answer
+            document.getElementById('displayAnswer').classList.add('revealed');
+            
+            // Increment Reps
+            repsCompleted++;
+            document.getElementById('repCounter').innerText = repsCompleted;
+
+            // Update Buttons & HUD Styling
+            document.getElementById('btnReveal').style.display = 'none';
+            
+            const btnNext = document.getElementById('btnNext');
+            btnNext.disabled = false;
+            btnNext.classList.add('ready');
+
+            document.getElementById('hudBox').classList.add('active');
+        }
+
+        // --- BOOKING MODAL LOGIC ---
+        function openModal() { document.getElementById('bookingModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('bookingModal').style.display = 'none'; document.getElementById('bookingForm').reset(); }
+        window.onclick = function(e) { if (e.target == document.getElementById('bookingModal')) closeModal(); }
+        
+        function processBooking(e) {
+            e.preventDefault();
+            alert("Initiating checkout sequence...\n\n(Backend Integration Pending)");
             closeModal();
         }
 
-        // Close modal if user clicks outside the box
-        window.onclick = function(event) {
-            const modal = document.getElementById('bookingModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+        // Start the HUD
+        initHUD();
     </script>
 </body>
 </html>
