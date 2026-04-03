@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.2</title>
+    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.3</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -92,7 +92,7 @@
         }
 
         .hud-wrapper::before {
-            content: 'LIVE DEMO (v2.2)';
+            content: 'LIVE DEMO (v2.3)';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -125,7 +125,7 @@
         }
 
         .hud-console.error-state {
-            border-color: #ef4444; /* Red border for error */
+            border-color: #ef4444; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 30px rgba(239, 68, 68, 0.2);
         }
 
@@ -203,7 +203,7 @@
         }
 
         .hud-equation {
-            font-size: 2.8rem; /* KaTeX scaling */
+            font-size: 2.8rem; 
             margin: 0;
             color: var(--text-light);
             text-shadow: 0 0 15px rgba(255,255,255,0.2);
@@ -430,7 +430,6 @@
     <script>
         // --- HUD ENGINE ---
         
-        // Fully Mapped Data Definitions based on Master Prompt Intel
         const levelDefinitions = {
             1: { name: "Level 1: The Baseline", desc: "Standard & Positive: The leading coefficient (a) is 1. All signs are positive. Roots are negative integers. Used to build raw speed and rhythm before the resistance hits." },
             2: { name: "Level 2: Negative Resistance", desc: "Hidden Positives: The constant (c) is positive, but the middle term (b) is negative. Forces the brain to recognize that negative sums create positive products." },
@@ -450,10 +449,15 @@
 
         async function initHUD() {
             try {
-                const response = await fetch('quads.jsonl');
-                if (!response.ok) throw new Error("File not found");
+                // Added a cache-busting timestamp and restricted to relative path to ensure clean fetches
+                const fetchUrl = './quads.jsonl?t=' + new Date().getTime();
+                const response = await fetch(fetchUrl);
+                
+                if (!response.ok) throw new Error("File not found or HTTP error");
+                
                 const text = await response.text();
                 parseData(text);
+                
             } catch (error) {
                 console.error("Database Connection Failed:", error);
                 
@@ -466,7 +470,7 @@
                 levelBadge.classList.add('error-badge');
                 
                 const levelDesc = document.getElementById('levelDesc');
-                levelDesc.innerHTML = "<strong>CRITICAL:</strong> Database connection failed. <code>quads.jsonl</code> could not be located. Ensure local server is running.";
+                levelDesc.innerHTML = "<strong>CRITICAL:</strong> Database connection failed. <code>quads.jsonl</code> could not be located. You must run a local web server (e.g., <code>python -m http.server 8000</code>) to fetch local files.";
                 levelDesc.classList.add('error-desc');
                 
                 const displayEq = document.getElementById('displayEquation');
@@ -484,41 +488,45 @@
         function parseData(rawText) {
             quadsDatabase = rawText.split('\n')
                                    .filter(line => line.trim() !== '')
-                                   .map(line => JSON.parse(line));
+                                   .map(line => {
+                                       try {
+                                           return JSON.parse(line);
+                                       } catch (e) {
+                                           console.error("Error parsing JSON line:", line);
+                                           return null;
+                                       }
+                                   })
+                                   .filter(item => item !== null);
             
-            // Set dynamic total quads count in the HUD
+            if(quadsDatabase.length === 0) {
+                 throw new Error("JSON file is empty or invalid.");
+            }
+
             document.getElementById('totalQuads').innerText = quadsDatabase.length;
-            
-            // Initial Load
             loadRandomQuad();
         }
 
         function loadRandomQuad() {
             if (quadsDatabase.length === 0) return;
 
-            // Pick random quadratic
             const randomIndex = Math.floor(Math.random() * quadsDatabase.length);
             currentQuad = quadsDatabase[randomIndex];
 
-            // Update UI Metadata mapping the properties
             const levelInfo = levelDefinitions[currentQuad.difficulty_level] || {name: "Unknown Level", desc: "Unknown parameters"};
             document.getElementById('levelName').innerText = levelInfo.name;
             document.getElementById('levelDesc').innerHTML = `<strong>Core Characteristic & Trap:</strong> ${levelInfo.desc}`;
             
-            // Render the main equation using KaTeX
             katex.render(currentQuad.equation, document.getElementById('displayEquation'), {
                 throwOnError: false,
                 displayMode: true
             });
             
-            // Format and render the answer string using KaTeX
             const answerString = `x_1 = ${currentQuad.solution_x1} \\quad | \\quad x_2 = ${currentQuad.solution_x2}`;
             katex.render(answerString, document.getElementById('displayAnswer'), {
                 throwOnError: false,
                 displayMode: true
             });
             
-            // Reset states
             document.getElementById('displayAnswer').classList.remove('revealed');
             document.getElementById('btnReveal').style.display = 'block';
             
@@ -530,14 +538,11 @@
         }
 
         function handleReveal() {
-            // Show Answer
             document.getElementById('displayAnswer').classList.add('revealed');
             
-            // Increment Reps
             repsCompleted++;
             document.getElementById('repCounter').innerText = repsCompleted;
 
-            // Update Buttons & HUD Styling
             document.getElementById('btnReveal').style.display = 'none';
             
             const btnNext = document.getElementById('btnNext');
@@ -547,7 +552,6 @@
             document.getElementById('hudBox').classList.add('active');
         }
 
-        // --- BOOKING MODAL LOGIC ---
         function openModal() { document.getElementById('bookingModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('bookingModal').style.display = 'none'; document.getElementById('bookingForm').reset(); }
         window.onclick = function(e) { if (e.target == document.getElementById('bookingModal')) closeModal(); }
@@ -558,7 +562,6 @@
             closeModal();
         }
 
-        // Start the HUD
         initHUD();
     </script>
 </body>
