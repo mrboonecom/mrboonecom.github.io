@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.3</title>
+    <title>The 1,000 Quadratic Gauntlet | Extreme IGCSE Coaching v2.4</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -92,7 +92,7 @@
         }
 
         .hud-wrapper::before {
-            content: 'LIVE DEMO (v2.3)';
+            content: 'LIVE DEMO (v2.4)';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -449,7 +449,7 @@
 
         async function initHUD() {
             try {
-                // Added a cache-busting timestamp and restricted to relative path to ensure clean fetches
+                // Fetch strictly via local web server to bypass CORS issues
                 const fetchUrl = './quads.jsonl?t=' + new Date().getTime();
                 const response = await fetch(fetchUrl);
                 
@@ -516,11 +516,13 @@
             document.getElementById('levelName').innerText = levelInfo.name;
             document.getElementById('levelDesc').innerHTML = `<strong>Core Characteristic & Trap:</strong> ${levelInfo.desc}`;
             
-            katex.render(currentQuad.equation, document.getElementById('displayEquation'), {
+            // Render the raw LaTeX equation dynamically mapped from JSONL
+            katex.render(currentQuad.equation.trim(), document.getElementById('displayEquation'), {
                 throwOnError: false,
                 displayMode: true
             });
             
+            // Render the dynamic answer string
             const answerString = `x_1 = ${currentQuad.solution_x1} \\quad | \\quad x_2 = ${currentQuad.solution_x2}`;
             katex.render(answerString, document.getElementById('displayAnswer'), {
                 throwOnError: false,
